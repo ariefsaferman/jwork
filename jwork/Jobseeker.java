@@ -41,28 +41,28 @@ public class Jobseeker
         return date;
     }
     
-    public String setName(String name)
+    public void setID(int id)
+    {
+        id = 0;
+    }
+    public void setName(String name)
     {
         name = "oop";
-        return name;
     }
     
-    public String setEmail(String email)
+    public void setEmail(String email)
     {
         email = "oop";
-        return email;
     }
     
-    public String setPassword(String password)
+    public void setPassword(String password)
     {
         password = "oop";
-        return password;
     }
     
-    public String setJoinDate(String joinDate)
+    public void setJoinDate(String joinDate)
     {
         joinDate = "oop";
-        return joinDate;
     }
     
 }

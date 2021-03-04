@@ -34,27 +34,24 @@ public class Recruiter
         return phoneNumber;
     }
     
-    public int setId(int id)
+    public void setId(int id)
     {
        
-        return 0;
+        id = 0;
     }
     
-    public String setEmail(String email)
+    public void setEmail(String email)
     {
         email = "oop";
-        return email;
     }
     
-     public String setName(String name)
+     public void setName(String name)
     {
         name = "oop";
-        return name;
     }
     
-    public  String setPhoneNumber(String phoneNumber)
+    public  void setPhoneNumber(String phoneNumber)
     {
         phoneNumber = "oop";
-        return phoneNumber;
     }
 }

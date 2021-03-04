@@ -1,0 +1,19 @@
+#BlueJ class context
+comment0.target=Invoice
+comment1.params=
+comment1.target=Invoice()
+comment2.params=id
+comment2.target=int\ getId(int)
+comment3.params=date
+comment3.target=java.lang.String\ getDate(java.lang.String)
+comment4.params=totalFee
+comment4.target=java.lang.String\ getTotalFee(java.lang.String)
+comment5.params=id
+comment5.target=void\ setID(int)
+comment6.params=idJobs
+comment6.target=void\ setIdJobs(int)
+comment7.params=date
+comment7.target=java.lang.String\ setDate(java.lang.String)
+comment8.params=totalFee
+comment8.target=int\ setTotalFee(int)
+numComments=9

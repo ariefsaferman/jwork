@@ -1,0 +1,16 @@
+#BlueJ class context
+comment0.target=Salary
+comment0.text=\r\n\ Write\ a\ description\ of\ class\ Salary\ here.\r\n\r\n\ @author\ (your\ name)\r\n\ @version\ (a\ version\ number\ or\ a\ date)\r\n
+comment1.params=
+comment1.target=int\ getIdCrew()
+comment2.params=
+comment2.target=int\ getIdBuilding()
+comment3.params=
+comment3.target=int\ getTotalSalary()
+comment4.params=nama
+comment4.target=java.lang.String\ getNamePerson(java.lang.String)
+comment5.params=joinDate
+comment5.target=java.lang.String\ getJoinDate(java.lang.String)
+comment6.params=
+comment6.target=java.lang.Boolean\ getIs5Year()
+numComments=7

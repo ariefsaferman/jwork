@@ -1,3 +1,10 @@
+/**
+ * 
+ *
+ * @author Arief Saferman
+ * @version 1.0 18 Maret 2021 
+ * 
+ */
 
 public class Job
 {

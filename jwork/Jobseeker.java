@@ -2,18 +2,28 @@
 /**
  * Write a description of class Jobseeker here.
  *
- * @author (your name)
- * @version (a version number or a date)
+ * @author Arief Saferman
+ * @version 1.0 18 Maret 2021 
+ * 
  */
 public class Jobseeker
 {
-    // instance variables - replace the example below with your own
     private int id;
     private String name,email,password,joinDate;
 
     
     public Jobseeker(int id, String name, String email, String password, String joinDate)
     {
+         /**
+   * Ini adalah metode constructor yang digunakan 
+   * untuk membuat menginisialisi isi dari instance variabel 
+   * @param id merupakan id dari orang yang mencari kerja 
+   * @param name  merupakan nama pelamar kerja 
+   * @param email email pekerja 
+   * @param password  merupakan password pekerja saat mendaftar 
+   * @param joindate  merupakan tanggal bergabung dengan perusahaan 
+   * @return int This returns sum of numA and numB.
+   */
         this.id = id; 
         this.name = name; 
         this.email = email; 
@@ -30,29 +40,51 @@ public class Jobseeker
 
     public int getID(int id)
     {
+        /**
+         * ini adalah metode getId untuk setiapp object mendapatkan ID masing-masing 
+         * @param id parameter ini digunakan untuk menyimpan value ID 
+         * @return dia akan mengembalikan dari ID yang diberikan oleh perusahaan 
+         */
         return id;
     }
     
-    public String getName(String nama)
+    public String getName(String name)
     {
-        nama = "oop";
-        return nama;
+        /**
+         * ini adalah metode getName untuk setiapp object mendapatkan ID masing-masing 
+         * @param id parameter ini digunakan untuk menyimpan value ID 
+         * @return dia akan mengembalikan dari ID yang diberikan oleh perusahaan 
+         */
+        return name;
     }
     
     public String getEmail(String email)
     {
-        email = "oop";
+        /**
+         * ini adalah metode getEmail untuk setiapp object mendapatkan ID masing-masing 
+         * @param email parameter ini digunakan untuk menyimpan value email 
+         * @return dia akan mengembalikan dari email yang didaftarkan 
+         */
         return email;
     }
     
     public String joinDate(String date)
     {
-        date = "oop";
+        /**
+         * ini adalah metode joinDate untuk setiapp object mendapatkan ID masing-masing 
+         * @param date parameter ini digunakan untuk menyimpan nilai date 
+         * @return dia akan mengembalikan dari berupaa string dengan nilai waktu bergabung 
+         */
         return date;
     }
     
     public void setID(int id)
     {
+        /**
+         * ini adalah metode setID untuk setiapp object mendapatkan ID masing-masing 
+         * @param digunakan untuk memberikan nilai pada parameter ID  
+         * @return tidak mengembalikan nilai  
+         */
         this.id = id;
     }
     public void setName(String name)

@@ -1,6 +1,6 @@
 #BlueJ class context
 comment0.target=Jobseeker
-comment0.text=\r\n\ Write\ a\ description\ of\ class\ Jobseeker\ here.\r\n\r\n\ @author\ (your\ name)\r\n\ @version\ (a\ version\ number\ or\ a\ date)\r\n
+comment0.text=\r\n\ Write\ a\ description\ of\ class\ Jobseeker\ here.\r\n\r\n\ @author\ Arief\ Saferman\r\n\ @version\ 1.0\ 18\ Maret\ 2021\ \r\n\ \r\n
 comment1.params=id\ name\ email\ password\ joinDate
 comment1.target=Jobseeker(int,\ java.lang.String,\ java.lang.String,\ java.lang.String,\ java.lang.String)
 comment10.params=password
@@ -11,7 +11,7 @@ comment2.params=
 comment2.target=void\ printData()
 comment3.params=id
 comment3.target=int\ getID(int)
-comment4.params=nama
+comment4.params=name
 comment4.target=java.lang.String\ getName(java.lang.String)
 comment5.params=email
 comment5.target=java.lang.String\ getEmail(java.lang.String)

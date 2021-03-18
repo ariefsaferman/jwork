@@ -4,9 +4,15 @@ public class Recruiter
     
     private int id;
     private String name, email, phoneNumber;
+    private Location location; 
     
-    public Recruiter()
+    public Recruiter(int id, String name, String email, String phoneNumber, Location location)
     {
+        this.id = id; 
+        this.name = name; 
+        this.email = email; 
+        this.phoneNumber = phoneNumber; 
+        this.location = location; 
       
     }
 
@@ -37,21 +43,36 @@ public class Recruiter
     public void setId(int id)
     {
        
-        id = 0;
+        this.id = id;
     }
     
     public void setEmail(String email)
     {
-        email = "oop";
+        this.email = email;
     }
     
      public void setName(String name)
     {
-        name = "oop";
+        this.name = name;
     }
     
     public  void setPhoneNumber(String phoneNumber)
     {
-        phoneNumber = "oop";
+        this.phoneNumber = phoneNumber;
+    }
+    
+    public Location getLocation(Location location)
+    {
+        return location; 
+    }
+    
+    public void setLocation(Location location)
+    {
+        this.location = location;
+    }
+    
+    public void printData()
+    {
+        
     }
 }

@@ -12,7 +12,17 @@ public class Jobseeker
     private String name,email,password,joinDate;
 
     
-    public Jobseeker()
+    public Jobseeker(int id, String name, String email, String password, String joinDate)
+    {
+        this.id = id; 
+        this.name = name; 
+        this.email = email; 
+        this.password = password; 
+        this.joinDate = joinDate; 
+        
+    }
+    
+    public void printData()
     {
         
     }
@@ -20,7 +30,7 @@ public class Jobseeker
 
     public int getID(int id)
     {
-        return 0;
+        return id;
     }
     
     public String getName(String nama)
@@ -43,26 +53,26 @@ public class Jobseeker
     
     public void setID(int id)
     {
-        id = 0;
+        this.id = id;
     }
     public void setName(String name)
     {
-        name = "oop";
+        this.name = name; 
     }
     
     public void setEmail(String email)
     {
-        email = "oop";
+        this.email = email; 
     }
     
     public void setPassword(String password)
     {
-        password = "oop";
+        this.password = password; 
     }
     
     public void setJoinDate(String joinDate)
     {
-        joinDate = "oop";
+        this.joinDate = joinDate; 
     }
     
 }

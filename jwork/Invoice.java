@@ -4,11 +4,15 @@ public class Invoice
     // instance variables - replace the example below with your own
     private int id, idJob, totalFee;
     private String date;
+    private Jobseeker jobseeker; 
 
-    public Invoice()
+    public Invoice(int id, int idJob, int totalFee, String date, Jobseeker jobseeker)
     {
-        // initialise instance variables
-        
+        this.id = id;
+        this.idJob = idJob; 
+        this.totalFee = totalFee; 
+        this.date = date; 
+        this.jobseeker = jobseeker; 
     }
 
     
@@ -30,25 +34,38 @@ public class Invoice
         return totalFee;
     }
     
+    public Jobseeker getJobSeeker(Jobseeker jobseeker)
+    {
+        return jobseeker; 
+    }
+    
     public void setID(int id)
     {
-         
-        
+         this.id = id;
     }
     
-    public void setIdJobs(int idJobs)
+    public void setIdJobs(int idJob)
+    {
+        this.idJob = idJob; 
+    }
+    
+    public void  setDate(String date)
+    {
+        this.date = date;
+    }
+    
+    public void setTotalFee(int totalFee)
+    {
+        this.totalFee = totalFee;
+    }
+    
+    public void setJobseeker(Jobseeker jobseeker)
+    {
+        this.jobseeker = jobseeker; 
+    }
+    
+    public void printData()
     {
         
-    }
-    
-    public String setDate(String date)
-    {
-        date = "oop";
-        return date;
-    }
-    
-    public int setTotalFee(int totalFee)
-    {
-        return totalFee;
     }
 }

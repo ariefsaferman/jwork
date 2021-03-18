@@ -1,7 +1,13 @@
 #BlueJ class context
 comment0.target=Recruiter
-comment1.params=
-comment1.target=Recruiter()
+comment1.params=id\ name\ email\ phoneNumber\ location
+comment1.target=Recruiter(int,\ java.lang.String,\ java.lang.String,\ java.lang.String,\ Location)
+comment10.params=location
+comment10.target=Location\ getLocation(Location)
+comment11.params=location
+comment11.target=void\ setLocation(Location)
+comment12.params=
+comment12.target=void\ printData()
 comment2.params=id
 comment2.target=int\ getId(int)
 comment3.params=name
@@ -18,4 +24,4 @@ comment8.params=name
 comment8.target=void\ setName(java.lang.String)
 comment9.params=phoneNumber
 comment9.target=void\ setPhoneNumber(java.lang.String)
-numComments=10
+numComments=13

@@ -34,7 +34,7 @@ public class Jobseeker
     
     public void printData()
     {
-        
+        System.out.println("pencari kerja: " + this.name);
     }
     
 

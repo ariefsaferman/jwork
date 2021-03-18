@@ -51,7 +51,7 @@ public class Location
     
     public void printData()
     {
-        
+        System.out.println("Provinsi: " + this.province);
     }
     
 }

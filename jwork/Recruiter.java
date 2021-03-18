@@ -81,6 +81,6 @@ public class Recruiter
     
     public void printData()
     {
-        
+        System.out.println("nama perekrut: " + this.name);
     }
 }

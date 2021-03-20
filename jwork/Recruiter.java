@@ -27,7 +27,8 @@ public class Recruiter
 
     
     /** 
-     * @return int
+     * mendapatkan nilai Id 
+     * @return int mengembalikan nilai id 
      */
     public int getId()
     {
@@ -37,7 +38,8 @@ public class Recruiter
     
     
     /** 
-     * @return String
+     * mendapatkan string nama dari setter 
+     * @return String mengembalikkan ke main sebuah nama recruiter 
      */
     public String getName()
     {
@@ -47,7 +49,8 @@ public class Recruiter
     
     
     /** 
-     * @return String
+     * mendapatkan email pelamar 
+     * @return String mengembalikkan string dari email pelamar 
      */
     public String getEmail()
     {
@@ -57,7 +60,8 @@ public class Recruiter
     
     
     /** 
-     * @return String
+     * mendapatkan nomor hp dari pelamar 
+     * @return String mengembalikkan variabel no hp dari pelamar 
      */
     public String getPhoneNumber()
     {
@@ -67,7 +71,8 @@ public class Recruiter
     
     
     /** 
-     * @param id
+     * mengubah nilai awal id 
+     * @param id menyimpan nilai id yang baru 
      */
     public void setId(int id)
     {
@@ -77,7 +82,8 @@ public class Recruiter
     
     
     /** 
-     * @param email
+     * mengubah nilai awal email 
+     * @param email menyimpan nilai email yang baru 
      */
     public void setEmail(String email)
     {
@@ -86,7 +92,8 @@ public class Recruiter
     
      
      /** 
-      * @param name
+      * mengubah nilai awal nama 
+      * @param name menyimpan nama yang baru 
       */
      public void setName(String name)
     {
@@ -95,7 +102,8 @@ public class Recruiter
     
     
     /** 
-     * @param phoneNumber
+     * mengubah nilai awal no hp 
+     * @param phoneNumber menyimpan nilai no hp yang baru 
      */
     public  void setPhoneNumber(String phoneNumber)
     {
@@ -104,8 +112,8 @@ public class Recruiter
     
     
     /** 
-     * @param location
-     * @return Location
+     * @param location menyimpak lokasi yang ingin diakses 
+     * @return Location mengembalikan nilai lokasi dari setter 
      */
     public Location getLocation(Location location)
     {
@@ -114,7 +122,8 @@ public class Recruiter
     
     
     /** 
-     * @param location
+     * memberikan nilai ke variabel location 
+     * @param location mengubah/memberikan nilai ke variabel location 
      */
     public void setLocation(Location location)
     {

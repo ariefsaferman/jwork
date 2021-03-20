@@ -21,7 +21,8 @@ public class Location
     
     
     /** 
-     * @return String
+     * getter untuk memberikan nilai awal province 
+     * @return String menyimpan variabel province sebagai string 
      */
     public String getProvince()
     {
@@ -30,7 +31,8 @@ public class Location
     
     
     /** 
-     * @return String
+     * getter untuk memberikan nilai awal city
+     * @return String menyimpan string city 
      */
     public String getCity()
     {
@@ -39,7 +41,8 @@ public class Location
     
     
     /** 
-     * @return String
+     * deskripsi dari kota yang asal 
+     * @return String menyimpan string deskripsi dari lokasi kota 
      */
     public String getDescription()
     {
@@ -48,7 +51,8 @@ public class Location
     
     
     /** 
-     * @param province
+     * mengubah province dengan nilai yang baru 
+     * @param province menyimpan nilai province yang sudah diubah 
      */
     public void setProvince(String province)
     {
@@ -57,7 +61,8 @@ public class Location
     
     
     /** 
-     * @param city
+     * mengubah nilai city yang dengan yang baru 
+     * @param city menyimpan nilai city yang baru 
      */
     public void setCity(String city)
     {
@@ -66,7 +71,8 @@ public class Location
     
     
     /** 
-     * @param description
+     * mengubah deskripsi untuk kota yang baru 
+     * @param description menyimpan deskripsi kota 
      */
     public void setDescription(String description)
     {

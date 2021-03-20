@@ -109,7 +109,8 @@ public class Jobseeker
     }
     
     /** 
-     * @param name
+     * setter untuk mengubah nilai dari nama 
+     * @param name menyimpan nama yang diubah 
      */
     public void setName(String name)
     {
@@ -118,7 +119,8 @@ public class Jobseeker
     
     
     /** 
-     * @param email
+     * setter untuk mengubah email dari pelamar pekerjaan 
+     * @param email return email sebagai string 
      */
     public void setEmail(String email)
     {
@@ -127,7 +129,8 @@ public class Jobseeker
     
     
     /** 
-     * @param password
+     * mengubah nilai password 
+     * @param password mengembalikan nilai password yang diubah 
      */
     public void setPassword(String password)
     {
@@ -136,7 +139,8 @@ public class Jobseeker
     
     
     /** 
-     * @param joinDate
+     * mengubah nilai joinDate untuk data yang baru 
+     * @param joinDate menyimpan data yang baru untuk pekerja yang baru juga
      */
     public void setJoinDate(String joinDate)
     {

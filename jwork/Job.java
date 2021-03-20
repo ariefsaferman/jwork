@@ -26,9 +26,9 @@ public class Job
 
     
     /** 
-     * method yang digunakan untuk men
-     * @param id
-     * @return int
+     * method yang digunakan untuk mendapatkan id dari pekerjaan 
+     * @param id menerima passing variabel integer yang merupakan idjob 
+     * @return int mengebalikan nilai id job 
      */
     public int getId(int id)
     {
@@ -37,8 +37,9 @@ public class Job
     
     
     /** 
-     * @param name
-     * @return String
+     * accessor yang digunakan untuk mendapatkan nama pekerjaan 
+     * @param name menerima nama pekerja 
+     * @return String mengembalikan nama pekerja 
      */
     public String getName(String name)
     {
@@ -47,8 +48,9 @@ public class Job
     
     
     /** 
-     * @param fee
-     * @return int
+     * accessor yang digunakan untuk menginisiasi nilai fee 
+     * @param fee menerima passing parameter untuk nilai fee 
+     * @return int mengembalikan nilai fee yang sudah di set 
      */
     public int getFee(int fee)
     {
@@ -57,8 +59,9 @@ public class Job
     
     
     /** 
-     * @param category
-     * @return String
+     * acesssor untuk memberikan nilai awal pada category pekerjaan 
+     * @param category menerima object category 
+     * @return String mengembalikan kategori yang sudah di set 
      */
     public String getCategory(String category)
     {
@@ -67,8 +70,9 @@ public class Job
     
     
     /** 
-     * @param recruiter
-     * @return Recruiter
+     * accessor untuk memberikan nilai awal untuk recruiter 
+     * @param recruiter menerima passing variabel jenis tipe data recruiter 
+     * @return Recruiter mengembalikan nilai recruiter 
      */
     public Recruiter getRecruiter(Recruiter recruiter)
     {
@@ -77,7 +81,8 @@ public class Job
     
     
     /** 
-     * @param recruiter
+     * mutator untuk mengubah nilai recruiter 
+     * @param recruiter variabel yang menyimpan nilai recruiter 
      */
     public void setRecruiter(Recruiter recruiter)
     {
@@ -86,7 +91,8 @@ public class Job
     
     
     /** 
-     * @param id
+     * setter untuk mengubah nilai id 
+     * @param id variabel yang menyimpan hasil ubahan nilai id 
      */
     public void setId(int id)
     {
@@ -95,7 +101,8 @@ public class Job
     
     
     /** 
-     * @param name
+     * setter untuk mengubah nilai name 
+     * @param name menyimpan hasil perubahan variabel name 
      */
     public void setName(String name)
     {
@@ -104,15 +111,17 @@ public class Job
     
     
     /** 
-     * @param fee
+     * setter untuk mengubah nilai fee 
+     * @param fee menyimpan nilai fee yang sudah diubah 
      */
     public void setFee(int fee)
     {
         this.fee = fee;
     }
     
+    
     public void printData()
     {
-        
+        System.out.println("nama pekerja:  " + this.name);
     }
 }

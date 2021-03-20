@@ -2,7 +2,7 @@
  * 
  *
  * @author Arief Saferman
- * @version 1.0 18 Maret 2021 
+ * @version  18 Maret 2021 
  * 
  */
 
@@ -24,46 +24,88 @@ public class Job
        
     }
 
+    
+    /** 
+     * method yang digunakan untuk men
+     * @param id
+     * @return int
+     */
     public int getId(int id)
     {
         return id;
     }
     
+    
+    /** 
+     * @param name
+     * @return String
+     */
     public String getName(String name)
     {
         return name;
     }
     
+    
+    /** 
+     * @param fee
+     * @return int
+     */
     public int getFee(int fee)
     {
         return fee;
     }
     
+    
+    /** 
+     * @param category
+     * @return String
+     */
     public String getCategory(String category)
     {
         return category;
     }
     
+    
+    /** 
+     * @param recruiter
+     * @return Recruiter
+     */
     public Recruiter getRecruiter(Recruiter recruiter)
     {
         return recruiter; 
     }
     
+    
+    /** 
+     * @param recruiter
+     */
     public void setRecruiter(Recruiter recruiter)
     {
         this.recruiter = recruiter; 
     }
     
+    
+    /** 
+     * @param id
+     */
     public void setId(int id)
     {
         this.id = id;
     }
     
+    
+    /** 
+     * @param name
+     */
     public void setName(String name)
     {
         this.name = name;
     }
     
+    
+    /** 
+     * @param fee
+     */
     public void setFee(int fee)
     {
         this.fee = fee;

@@ -2,7 +2,7 @@
  * 
  *
  * @author Arief Saferman
- * @version 1.0 18 Maret 2021 
+ * @version  18 Maret 2021 
  * 
  */
 
@@ -19,31 +19,55 @@ public class Location
         this.description = description; 
     }
     
-    public String getProvince(String province)
+    
+    /** 
+     * @return String
+     */
+    public String getProvince()
     {
         return province; 
     }
     
-    public String getCity(String city)
+    
+    /** 
+     * @return String
+     */
+    public String getCity()
     {
         return city; 
     }
     
-    public String getDescription(String description)
+    
+    /** 
+     * @return String
+     */
+    public String getDescription()
     {
         return description; 
     }
     
+    
+    /** 
+     * @param province
+     */
     public void setProvince(String province)
     {
         this.province = province; 
     }
     
+    
+    /** 
+     * @param city
+     */
     public void setCity(String city)
     {
         this.city = city; 
     }
     
+    
+    /** 
+     * @param description
+     */
     public void setDescription(String description)
     {
         this.description = description; 

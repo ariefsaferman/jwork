@@ -2,9 +2,10 @@
  * 
  *
  * @author Arief Saferman
- * @version 1.0 18 Maret 2021 
+ * @version  18 Maret 2021 
  * 
  */
+
 
 
 public class Recruiter
@@ -24,56 +25,97 @@ public class Recruiter
       
     }
 
-    public int getId(int id)
+    
+    /** 
+     * @return int
+     */
+    public int getId()
     {
        
         return id;
     }
     
-    public String getName(String name)
+    
+    /** 
+     * @return String
+     */
+    public String getName()
     {
         name = "oop";
         return name;
     }
     
-    public String getEmail(String email)
+    
+    /** 
+     * @return String
+     */
+    public String getEmail()
     {
         email = "oop";
         return email;
     }
     
-    public String getPhoneNumber(String phoneNumber)
+    
+    /** 
+     * @return String
+     */
+    public String getPhoneNumber()
     {
         phoneNumber = "oop";
         return phoneNumber;
     }
     
+    
+    /** 
+     * @param id
+     */
     public void setId(int id)
     {
        
         this.id = id;
     }
     
+    
+    /** 
+     * @param email
+     */
     public void setEmail(String email)
     {
         this.email = email;
     }
     
+     
+     /** 
+      * @param name
+      */
      public void setName(String name)
     {
         this.name = name;
     }
     
+    
+    /** 
+     * @param phoneNumber
+     */
     public  void setPhoneNumber(String phoneNumber)
     {
         this.phoneNumber = phoneNumber;
     }
     
+    
+    /** 
+     * @param location
+     * @return Location
+     */
     public Location getLocation(Location location)
     {
         return location; 
     }
     
+    
+    /** 
+     * @param location
+     */
     public void setLocation(Location location)
     {
         this.location = location;

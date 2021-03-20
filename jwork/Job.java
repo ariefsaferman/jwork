@@ -41,7 +41,7 @@ public class Job
      * @param name menerima nama pekerja 
      * @return String mengembalikan nama pekerja 
      */
-    public String getName(String name)
+    public String getName()
     {
         return name;
     }
@@ -122,6 +122,6 @@ public class Job
     
     public void printData()
     {
-        System.out.println("nama pekerja:  " + this.name);
+        System.out.println("nama pekerjaan:  " + this.name);
     }
 }

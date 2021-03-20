@@ -119,6 +119,6 @@ public class Invoice
      */
     public void printData()
     {
-        System.out.println("id joob: " + id);
+        System.out.println("total harga: " + this.totalFee);
     }
 }

@@ -43,7 +43,6 @@ public class Recruiter
      */
     public String getName()
     {
-        name = "oop";
         return name;
     }
     

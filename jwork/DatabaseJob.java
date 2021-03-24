@@ -24,7 +24,7 @@ public class DatabaseJob
      * @param job Untuk menerima argumen list job baru 
      * @return boolean memberikan tanda bahwa ada sebuah job baru 
      */
-    public boolean addJob(Job job)
+    public static boolean addJob(Job job)
     {
         return false; 
     }

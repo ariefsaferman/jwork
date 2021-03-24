@@ -7,7 +7,7 @@ public class DatabaseRecruiter
         this.listRecruiter = listRecruiter;
     }
 
-    public boolean addRecruiter(Recruiter recruiter)
+    public static boolean addRecruiter(Recruiter recruiter)
     {
         return false; 
     }

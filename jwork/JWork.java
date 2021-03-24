@@ -12,10 +12,11 @@ public class JWork
         System.out.println("Nama Recruiter: " + recruiter.getName());
         recruiter.setName("Titus Zarek");
         System.out.println("Nama Recruiter setelah setter: " + recruiter.getName());
-        System.out.println("Nama job: " + job.getName());
 
-        recruiter.addRecruiter(); 
-        job.getRecruiter(Recruiter); 
+        job.printData();
+
+        DatabaseJob.addJob(job);
+        DatabaseRecruiter.addRecruiter(recruiter);
 
     } 
 }

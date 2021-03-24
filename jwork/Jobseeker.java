@@ -5,21 +5,21 @@
  * @author Arief Saferman
  * @version 18 Maret 2021 
  * 
- */
+ * 
+ * Ini adalah metode constructor yang digunakan 
+ * untuk membuat menginisialisi isi dari instance variabel 
+ * @param id merupakan id dari orang yang mencari kerja 
+ * @param name  merupakan nama pelamar kerja 
+ * @param email email pekerja 
+ * @param password  merupakan password pekerja saat mendaftar 
+ * @param joindate  merupakan tanggal bergabung dengan perusahaan 
+ * @return int This returns sum of numA and numB.
+   */
 public class Jobseeker
 {
     private int id;
     private String name,email,password,joinDate;
-    /**
-   * Ini adalah metode constructor yang digunakan 
-   * untuk membuat menginisialisi isi dari instance variabel 
-   * @param id merupakan id dari orang yang mencari kerja 
-   * @param name  merupakan nama pelamar kerja 
-   * @param email email pekerja 
-   * @param password  merupakan password pekerja saat mendaftar 
-   * @param joindate  merupakan tanggal bergabung dengan perusahaan 
-   * @return int This returns sum of numA and numB.
-   */
+  
     
     public Jobseeker(int id, String name, String email, String password, String joinDate)
     {
@@ -41,70 +41,69 @@ public class Jobseeker
     
     /** 
      * @return int
-     */
+     * 
+     *  ini adalah metode getId untuk setiapp object mendapatkan ID masing-masing 
+     *  @param id parameter ini digunakan untuk menyimpan value ID 
+     * @return dia akan mengembalikan dari ID yang diberikan oleh perusahaan 
+         */
     public int getID()
     {
-        /**
-         * ini adalah metode getId untuk setiapp object mendapatkan ID masing-masing 
-         * @param id parameter ini digunakan untuk menyimpan value ID 
-         * @return dia akan mengembalikan dari ID yang diberikan oleh perusahaan 
-         */
+        
         return id;
     }
     
     
     /** 
      * @return String
+     * /**
+     * ini adalah metode getName untuk setiapp object mendapatkan ID masing-masing 
+     * @param id parameter ini digunakan untuk menyimpan value ID 
+     * @return dia akan mengembalikan dari ID yang diberikan oleh perusahaan 
      */
     public String getName()
     {
-        /**
-         * ini adalah metode getName untuk setiapp object mendapatkan ID masing-masing 
-         * @param id parameter ini digunakan untuk menyimpan value ID 
-         * @return dia akan mengembalikan dari ID yang diberikan oleh perusahaan 
-         */
+        
         return name;
     }
     
     
     /** 
      * @return String
-     */
+    * ini adalah metode getEmail untuk setiapp object mendapatkan ID masing-masing 
+    * @param email parameter ini digunakan untuk menyimpan value email 
+    * @return dia akan mengembalikan dari email yang didaftarkan 
+    */
     public String getEmail()
     {
-        /**
-         * ini adalah metode getEmail untuk setiapp object mendapatkan ID masing-masing 
-         * @param email parameter ini digunakan untuk menyimpan value email 
-         * @return dia akan mengembalikan dari email yang didaftarkan 
-         */
+       
         return email;
     }
     
     
     /** 
      * @return String
+     * ini adalah metode joinDate untuk setiapp object mendapatkan ID masing-masing 
+     * @return dia akan mengembalikan dari berupaa string dengan nilai waktu bergabung 
      */
     public String getJoinDate()
     {
-        /**
-         * ini adalah metode joinDate untuk setiapp object mendapatkan ID masing-masing 
-         * @param date parameter ini digunakan untuk menyimpan nilai date 
-         * @return dia akan mengembalikan dari berupaa string dengan nilai waktu bergabung 
-         */
+        
+         
+         
         return joinDate;
     }
     
     
     /** 
      * @param id
+     *  
+     * ini adalah metode setID untuk setiapp object mendapatkan ID masing-masing 
+     * @param digunakan untuk memberikan nilai pada parameter ID  
+     * @return tidak mengembalikan nilai  
      */
     public void setID(int id)
     {
-        /**
-         * ini adalah metode setID untuk setiapp object mendapatkan ID masing-masing 
-         * @param digunakan untuk memberikan nilai pada parameter ID  
-         * @return tidak mengembalikan nilai  
-         */
+       
         this.id = id;
     }
     

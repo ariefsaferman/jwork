@@ -1,28 +1,24 @@
 public class DatabaseRecruiter 
 {
-    public String[] listRecruiter = {}; 
+    public static String[] listRecruiter = {}; 
 
-    public DatabaseRecruiter(String[] listRecruiter)
-    {
-        this.listRecruiter = listRecruiter;
-    }
 
     public static boolean addRecruiter(Recruiter recruiter)
     {
         return false; 
     }
 
-    public boolean removeRecruiter(Recruiter recruiter)
+    public static boolean removeRecruiter(Recruiter recruiter)
     {
         return false; 
     }
 
-    public Recruiter getRecruiter()
+    public static Recruiter getRecruiter()
     {
         return null; 
     }
 
-    public String[] getListRecruiter()
+    public static String[] getListRecruiter()
     {
         return listRecruiter; 
     }

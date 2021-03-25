@@ -8,9 +8,9 @@
 
 public class Location
 {
-    private String province; 
-    private String city; 
-    private String description; 
+    private static String province; 
+    private static String city; 
+    private static String description; 
     
     public Location(String province, String city, String description)
     {
@@ -34,7 +34,7 @@ public class Location
      * getter untuk memberikan nilai awal city
      * @return String menyimpan string city 
      */
-    public String getCity()
+    public static String getCity()
     {
         return city; 
     }

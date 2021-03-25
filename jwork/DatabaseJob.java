@@ -9,14 +9,8 @@
  */
 public class DatabaseJob
 {
-    public String[] listJob = {}; 
+    public static String[] listJob = {}; 
     
-    public DatabaseJob()
-    {
-        /**
-         * Karena masih prototipe yang belum kita isi 
-         */
-    }
     
     
     /** 
@@ -35,7 +29,7 @@ public class DatabaseJob
      * @param job  untuk menerima variabel yang ingin dihapus 
      * @return boolean memberikan tanda bahwa ada ingin item yang ingin dihapus 
      */
-    public boolean removeJob(Job job)
+    public static boolean removeJob(Job job)
     {
         return false; 
     }
@@ -44,7 +38,7 @@ public class DatabaseJob
     /** 
      * @return Job mengembalikkan nilai yang di dapat dari list 
      */
-    public Job getJob()
+    public static Job getJob()
     {
         return null; 
     }
@@ -53,7 +47,7 @@ public class DatabaseJob
     /** 
      * @return String[] untuk menyimpan seluruh list job yang ada 
      */
-    public String[] getListJob()
+    public static String[] getListJob()
     {
         return listJob;
     }

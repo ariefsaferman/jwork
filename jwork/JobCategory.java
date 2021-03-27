@@ -1,3 +1,11 @@
+/**
+ * 
+ *
+ * @author Arief Saferman
+ * @version  18 Maret 2021 
+ * 
+ */
+
 public enum JobCategory 
 {
     WebDeveloper("Web Developer"), 
@@ -16,6 +24,7 @@ public enum JobCategory
         this.jobstring = jobstring; 
     }
 
+    @Override
     public String toString()
     {
         return jobstring; 

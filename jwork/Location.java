@@ -8,9 +8,9 @@
 
 public class Location
 {
-    private static String province; 
-    private static String city; 
-    private static String description; 
+    private String province; 
+    private String city; 
+    private String description; 
     
     public Location(String province, String city, String description)
     {
@@ -34,7 +34,7 @@ public class Location
      * getter untuk memberikan nilai awal city
      * @return String menyimpan string city 
      */
-    public static String getCity()
+    public String getCity()
     {
         return city; 
     }
@@ -79,7 +79,7 @@ public class Location
         this.description = description; 
     }
     
-    public void printData()
+    public  void printData()
     {
         System.out.println("Provinsi: " + this.province);
     }

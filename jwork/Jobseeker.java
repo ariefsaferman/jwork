@@ -6,19 +6,13 @@
  * @version 18 Maret 2021 
  * 
  * 
- * Ini adalah metode constructor yang digunakan 
- * untuk membuat menginisialisi isi dari instance variabel 
- * @param id merupakan id dari orang yang mencari kerja 
- * @param name  merupakan nama pelamar kerja 
- * @param email email pekerja 
- * @param password  merupakan password pekerja saat mendaftar 
- * @param joindate  merupakan tanggal bergabung dengan perusahaan 
+ * Ini adalah metode constructor yang digunakan untuk Jobseeker
  * @return int This returns sum of numA and numB.
    */
 public class Jobseeker
 {
     private int id;
-    private String name,email,password,joinDate;
+    private String name, email, password, joinDate;
   
     
     public Jobseeker(int id, String name, String email, String password, String joinDate)
@@ -92,10 +86,22 @@ public class Jobseeker
          
         return joinDate;
     }
+
+
+    /** 
+     * 
+     *  
+     * ini adalah metode getPassword untuk setiapp object mendapatkan password masing-masing  
+     * @return tidak mengembalikan nilai  
+     */
+    public String getPassword()
+    {
+        return password; 
+    }
     
     
     /** 
-     * @param id
+     * 
      *  
      * ini adalah metode setID untuk setiapp object mendapatkan ID masing-masing 
      * @param digunakan untuk memberikan nilai pada parameter ID  
@@ -105,6 +111,18 @@ public class Jobseeker
     {
        
         this.id = id;
+    }
+
+     /** 
+     * 
+     *  
+     * ini adalah metode setPassword  
+     * @param password digunakan untuk memberikan nilai pada parameter password  
+     * @return mengembalikan nilai password yang diubah   
+     */
+    public void setPassword(String password)
+    {
+        this.password = password; 
     }
     
     /** 
@@ -127,14 +145,6 @@ public class Jobseeker
     }
     
     
-    /** 
-     * mengubah nilai password 
-     * @param password mengembalikan nilai password yang diubah 
-     */
-    public void setPassword(String password)
-    {
-        this.password = password; 
-    }
     
     
     /** 

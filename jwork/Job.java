@@ -1,4 +1,3 @@
-import java.util.Locale.Category;
 
 /**
  * 
@@ -11,10 +10,10 @@ import java.util.Locale.Category;
 public class Job
 {
   
-    private static int id, fee;
-    private static String name;
-    private static Recruiter recruiter; 
-    private static JobCategory category; 
+    private  int id, fee;
+    private  String name;
+    private  Recruiter recruiter; 
+    private  JobCategory category; 
 
 
     public Job(int id, int fee, String name, JobCategory category, Recruiter recruiter)
@@ -33,7 +32,7 @@ public class Job
      * @param id menerima passing variabel integer yang merupakan idjob 
      * @return int mengebalikan nilai id job 
      */
-    public static int getId(int id)
+    public    int getId(int id)
     {
         return id;
     }
@@ -44,7 +43,7 @@ public class Job
      * @param name menerima nama pekerja 
      * @return String mengembalikan nama pekerja 
      */
-    public static String getName()
+    public String getName()
     {
         return name;
     }
@@ -55,7 +54,7 @@ public class Job
      * @param fee menerima passing parameter untuk nilai fee 
      * @return int mengembalikan nilai fee yang sudah di set 
      */
-    public static int getFee()
+    public int getFee()
     {
         return fee;
     }
@@ -66,7 +65,7 @@ public class Job
      * @param category menerima object category 
      * @return String mengembalikan kategori yang sudah di set 
      */
-    public static JobCategory getCategory(JobCategory category)
+    public JobCategory getCategory(JobCategory category)
     {
         return category;
     }
@@ -77,7 +76,7 @@ public class Job
      * @param recruiter menerima passing variabel jenis tipe data recruiter 
      * @return Recruiter mengembalikan nilai recruiter 
      */
-    public static Recruiter getRecruiter(Recruiter recruiter)
+    public Recruiter getRecruiter(Recruiter recruiter)
     {
         return recruiter; 
     }
@@ -87,7 +86,7 @@ public class Job
      * mutator untuk mengubah nilai recruiter 
      * @param recruiter variabel yang menyimpan nilai recruiter 
      */
-    public  void setRecruiter(Recruiter recruiter)
+    public void setRecruiter(Recruiter recruiter)
     {
         this.recruiter = recruiter; 
     }
@@ -128,11 +127,11 @@ public class Job
     }
     
     
-    public static void printData()
+    public void printData()
     {
         System.out.println("================== JOB ==================");
         System.out.println("ID: " + id);
-        System.out.println("Name: " + Job.getName());
+        System.out.println("Name: " + name);
         System.out.println("Recruiter: " + recruiter.getName());
         System.out.println("City: " + recruiter.getLocation().getCity());
         System.out.println("Fee: " + fee);

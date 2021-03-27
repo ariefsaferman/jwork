@@ -42,13 +42,9 @@ public class JWork
         // Tugas 5 
         Location location = new Location("Depok", "Jawa Barat", "Universitas Indonesia"); 
         Recruiter recruiter = new Recruiter(1, "Hansaka", "apaaja", "0811", location);
-        Job job = new Job(recruiter.getId(), 100000000, "Senior Designer", JobCategory.WebDeveloper, recruiter);
+        Job job = new Job(1, 100000000, "Senior Designer", JobCategory.WebDeveloper, recruiter);
 
-        Job.printData();
-
-
-
-
+        job.printData();
 
     } 
 }

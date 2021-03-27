@@ -6,14 +6,12 @@
  * 
  */
 
-
-
 public class Recruiter
 {
     
-    private static int id;
-    private static String name, email, phoneNumber;
-    private static Location location; 
+    private  int id;
+    private  String name, email, phoneNumber;
+    private  Location location; 
     
     public Recruiter(int id, String name, String email, String phoneNumber, Location location)
     {
@@ -30,7 +28,7 @@ public class Recruiter
      * mendapatkan nilai Id 
      * @return int mengembalikan nilai id 
      */
-    public static int getId()
+    public int getId()
     {
        
         return id;
@@ -41,7 +39,7 @@ public class Recruiter
      * mendapatkan string nama dari setter 
      * @return String mengembalikkan ke main sebuah nama recruiter 
      */
-    public static String getName()
+    public  String getName()
     {
         return name;
     }
@@ -114,7 +112,7 @@ public class Recruiter
      * @param location menyimpak lokasi yang ingin diakses 
      * @return Location mengembalikan nilai lokasi dari setter 
      */
-    public static Location getLocation()
+    public   Location getLocation()
     {
         return location; 
     }

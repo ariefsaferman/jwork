@@ -52,5 +52,4 @@ public class DatabaseJob
         return listJob;
     }
     
-    
 }

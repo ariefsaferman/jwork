@@ -12,14 +12,35 @@ public class Invoice
     private int id, idJob, totalFee;
     private String date;
     private Jobseeker jobseeker; 
+    private PaymentType paymentType;
+    private InvoiceStatus status;
 
-    public Invoice(int id, int idJob, int totalFee, String date, Jobseeker jobseeker)
+    public PaymentType getPaymentType() {
+        return this.paymentType;
+    }
+
+    public void setPaymentType(PaymentType paymentType) {
+        this.paymentType = paymentType;
+    }
+
+    public InvoiceStatus getStatus() {
+        return this.status;
+    }
+
+    public void setStatus(InvoiceStatus status) {
+        this.status = status;
+    }
+
+    public Invoice(int id, int idJob, String date, int totalFee, Jobseeker jobseeker, PaymentType paymentType, InvoiceStatus status)
     {
         this.id = id;
         this.idJob = idJob; 
-        this.totalFee = totalFee; 
         this.date = date; 
+        this.totalFee = totalFee; 
         this.jobseeker = jobseeker; 
+        this.paymentType = paymentType;
+        this.status = status; 
+        
     }
 
     
@@ -119,6 +140,11 @@ public class Invoice
      */
     public void printData()
     {
-        System.out.println("total harga: " + this.totalFee);
+        System.out.println("========== INVOICE ==========");
+        System.out.println("ID: " + id);
+        System.out.println("ID Job: " + idJob);
+        System.out.println("Date: " +  date); 
+        System.out.println("Seeker: " + jobseeker.getName());
+        System.out.println("Status: " + status.Finished);
     }
 }

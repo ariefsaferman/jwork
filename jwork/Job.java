@@ -32,7 +32,7 @@ public class Job
      * @param id menerima passing variabel integer yang merupakan idjob 
      * @return int mengebalikan nilai id job 
      */
-    public    int getId(int id)
+    public int getId()
     {
         return id;
     }

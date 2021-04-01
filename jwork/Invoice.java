@@ -6,44 +6,58 @@
  * 
  */
 
-public class Invoice
+abstract class Invoice
 {
     // instance variables - replace the example below with your own
-    private int id, idJob, totalFee;
-    private String date;
+    // private int id, totalFee;
+    // private String date;
+    // private Jobseeker jobseeker; 
+    // private PaymentType paymentType;
+    // private InvoiceStatus invoiceStatus;
+
+    private int id; 
+    private Job job; 
+    private String date; 
+    protected int totalFee; 
     private Jobseeker jobseeker; 
-    private PaymentType paymentType;
-    private InvoiceStatus status;
+    private InvoiceStatus invoiceStatus; 
 
-    public PaymentType getPaymentType() {
-        return this.paymentType;
-    }
-
-    public void setPaymentType(PaymentType paymentType) {
-        this.paymentType = paymentType;
-    }
-
-    public InvoiceStatus getStatus() {
-        return this.status;
-    }
-
-    public void setStatus(InvoiceStatus status) {
-        this.status = status;
-    }
-
-    public Invoice(int id, int idJob, String date, int totalFee, Jobseeker jobseeker, PaymentType paymentType, InvoiceStatus status)
+    public Invoice(int id, Job job, String date, Jobseeker jobseeker, InvoiceStatus invoiceStatus)
     {
-        this.id = id;
-        this.idJob = idJob; 
+        this.id = id; 
+        this.job = job; 
         this.date = date; 
-        this.totalFee = totalFee; 
         this.jobseeker = jobseeker; 
-        this.paymentType = paymentType;
-        this.status = status; 
+        this.invoiceStatus = invoiceStatus; 
+        // this.id = id;
+        // this.idJob = idJob; 
+        // this.date = date; 
+        // this.totalFee = totalFee; 
+        // this.jobseeker = jobseeker; 
+        // this.paymentType = paymentType;
+        // this.status = status; 
         
     }
 
-    
+    public abstract PaymentType getPaymentType();
+
+    public Job getJob()
+    {
+        return job; 
+    }
+
+    public void setJob(Job job)
+    {
+        this.job = job; 
+    }
+
+    public InvoiceStatus getStatus() {
+        return invoiceStatus;
+    }
+
+    public void setStatus(InvoiceStatus status) {
+        this.invoiceStatus = invoiceStatus;
+    }
     
     /** 
      * method untuk mendapatkan id pembayaran 
@@ -51,10 +65,8 @@ public class Invoice
      */
     public int getId()
     {
-        
         return id;
     }
-    
     
     /** 
      * method untuk mendapatkan tanggal dari invoice dibuat 
@@ -62,10 +74,8 @@ public class Invoice
      */
     public String getDate()
     {
-        date = "oop";
         return date;
     }
-    
     
     /** 
      * method yang digunakan untuk mendapatkan totalFee dari seluruh invoice 
@@ -76,7 +86,6 @@ public class Invoice
         return totalFee;
     }
     
-    
     /** 
      * method yang digunakan untuk mencari karyawan 
      * @return Jobseeker Mengembalikan object jobseeker supaya terlihat keseluruh informasi personalnya 
@@ -85,7 +94,6 @@ public class Invoice
     {
         return jobseeker; 
     }
-    
     
     /** 
      * mutator/setter untuk mengubah nilai id invoice 
@@ -96,36 +104,29 @@ public class Invoice
          this.id = id;
     }
     
-    
     /** 
      * mutator/setter mengubah nilai idJob 
      * @param idJob Menyimpan nilai idJob yang diubah 
      */
-    public void setIdJobs(int idJob)
+    public void setIdJobs(Job job)
     {
-        this.idJob = idJob; 
+        this.job = job; 
     }
-    
     
     /** 
      * Method yang digunakan untuk mengubah tanggal invoice 
      * @param date Digunakan untuk menyimpan nilai tanggal yang diubah 
      */
-    public void  setDate(String date)
+    public void setDate(String date)
     {
         this.date = date;
     }
-    
     
     /** 
      * method yang digunakan untuk mengubah totalFee 
      * @param totalFee menyimpan nilai totalFee yang diubah 
      */
-    public void setTotalFee(int totalFee)
-    {
-        this.totalFee = totalFee;
-    }
-    
+    public abstract void setTotalFee();
     
     /** 
      * method yang digunakan untuk mengubah object jobseeker
@@ -135,16 +136,9 @@ public class Invoice
     {
         this.jobseeker = jobseeker; 
     }
+    
     /**
      * method yang digunakan untuk mengeprint data 
      */
-    public void printData()
-    {
-        System.out.println("========== INVOICE ==========");
-        System.out.println("ID: " + id);
-        System.out.println("ID Job: " + idJob);
-        System.out.println("Date: " +  date); 
-        System.out.println("Seeker: " + jobseeker.getName());
-        System.out.println("Status: " + status.Finished);
-    }
+    public abstract void printData();
 }

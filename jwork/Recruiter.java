@@ -9,9 +9,9 @@
 public class Recruiter
 {
     
-    private  int id;
-    private  String name, email, phoneNumber;
-    private  Location location; 
+    private int id;
+    private String name, email, phoneNumber;
+    private Location location; 
     
     public Recruiter(int id, String name, String email, String phoneNumber, Location location)
     {
@@ -51,7 +51,6 @@ public class Recruiter
      */
     public String getEmail()
     {
-        email = "oop";
         return email;
     }
     
@@ -62,10 +61,8 @@ public class Recruiter
      */
     public String getPhoneNumber()
     {
-        phoneNumber = "oop";
         return phoneNumber;
     }
-    
     
     /** 
      * mengubah nilai awal id 
@@ -73,10 +70,8 @@ public class Recruiter
      */
     public void setId(int id)
     {
-       
         this.id = id;
     }
-    
     
     /** 
      * mengubah nilai awal email 
@@ -97,26 +92,23 @@ public class Recruiter
         this.name = name;
     }
     
-    
     /** 
      * mengubah nilai awal no hp 
      * @param phoneNumber menyimpan nilai no hp yang baru 
      */
-    public  void setPhoneNumber(String phoneNumber)
+    public void setPhoneNumber(String phoneNumber)
     {
         this.phoneNumber = phoneNumber;
     }
-    
     
     /** 
      * @param location menyimpak lokasi yang ingin diakses 
      * @return Location mengembalikan nilai lokasi dari setter 
      */
-    public   Location getLocation()
+    public Location getLocation()
     {
         return location; 
     }
-    
     
     /** 
      * memberikan nilai ke variabel location 
@@ -129,6 +121,10 @@ public class Recruiter
     
     public void printData()
     {
-        System.out.println("nama perekrut: " + this.name);
+        System.out.println("Id: " + id);
+        System.out.println("Nama Perekrut: " + name);
+        System.out.println("Email Perekrut: " + email);
+        System.out.println("Nomer HP Perekrut: " + phoneNumber);
+        System.out.println("Lokasi Perekrut: " + location.getCity());
     }
 }

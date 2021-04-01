@@ -26,7 +26,6 @@ public class Job
        
     }
 
-    
     /** 
      * method yang digunakan untuk mendapatkan id dari pekerjaan 
      * @param id menerima passing variabel integer yang merupakan idjob 
@@ -36,7 +35,6 @@ public class Job
     {
         return id;
     }
-    
     
     /** 
      * accessor yang digunakan untuk mendapatkan nama pekerjaan 
@@ -59,24 +57,20 @@ public class Job
         return fee;
     }
     
-    
     /** 
      * acesssor untuk memberikan nilai awal pada category pekerjaan 
-     * @param category menerima object category 
      * @return String mengembalikan kategori yang sudah di set 
      */
-    public JobCategory getCategory(JobCategory category)
+    public JobCategory getCategory()
     {
         return category;
     }
     
-    
     /** 
      * accessor untuk memberikan nilai awal untuk recruiter 
-     * @param recruiter menerima passing variabel jenis tipe data recruiter 
      * @return Recruiter mengembalikan nilai recruiter 
      */
-    public Recruiter getRecruiter(Recruiter recruiter)
+    public Recruiter getRecruiter()
     {
         return recruiter; 
     }
@@ -101,7 +95,6 @@ public class Job
         this.id = id;
     }
     
-    
     /** 
      * setter untuk mengubah nilai name 
      * @param name menyimpan hasil perubahan variabel name 
@@ -110,7 +103,6 @@ public class Job
     {
         this.name = name;
     }
-    
     
     /** 
      * setter untuk mengubah nilai fee 

@@ -11,8 +11,6 @@ public class DatabaseJob
 {
     public static String[] listJob = {}; 
     
-    
-    
     /** 
      * Method addJob untuk menambah list job pada database
      * @param job Untuk menerima argumen list job baru 

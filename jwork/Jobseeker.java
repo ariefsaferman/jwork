@@ -17,21 +17,12 @@ public class Jobseeker
     
     public Jobseeker(int id, String name, String email, String password, String joinDate)
     {
-      
         this.id = id; 
         this.name = name; 
         this.email = email; 
         this.password = password; 
         this.joinDate = joinDate; 
-        
     }
-    
-    public void printData()
-    {
-        System.out.println("pencari kerja: " + this.name);
-    }
-    
-
     
     /** 
      * @return int
@@ -42,10 +33,8 @@ public class Jobseeker
          */
     public int getID()
     {
-        
         return id;
     }
-    
     
     /** 
      * @return String
@@ -56,11 +45,9 @@ public class Jobseeker
      */
     public String getName()
     {
-        
         return name;
     }
-    
-    
+        
     /** 
      * @return String
     * ini adalah metode getEmail untuk setiapp object mendapatkan ID masing-masing 
@@ -69,7 +56,6 @@ public class Jobseeker
     */
     public String getEmail()
     {
-       
         return email;
     }
     
@@ -81,9 +67,6 @@ public class Jobseeker
      */
     public String getJoinDate()
     {
-        
-         
-         
         return joinDate;
     }
 
@@ -144,9 +127,6 @@ public class Jobseeker
         this.email = email; 
     }
     
-    
-    
-    
     /** 
      * mengubah nilai joinDate untuk data yang baru 
      * @param joinDate menyimpan data yang baru untuk pekerja yang baru juga
@@ -155,5 +135,13 @@ public class Jobseeker
     {
         this.joinDate = joinDate; 
     }
-    
+
+    public void printData()
+    {
+        System.out.println("Id: " + id);
+        System.out.println("Name: " + name);
+        System.out.println("Email: " + email);
+        System.out.println("Password: " + password);
+        System.out.println("JoinDate: " + joinDate);
+    }
 }

@@ -90,7 +90,7 @@ abstract class Invoice
      * method yang digunakan untuk mencari karyawan 
      * @return Jobseeker Mengembalikan object jobseeker supaya terlihat keseluruh informasi personalnya 
      */
-    public Jobseeker getJobSeeker()
+    public Jobseeker getJobseeker()
     {
         return jobseeker; 
     }

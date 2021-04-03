@@ -59,24 +59,38 @@ public class JWork
 
     
         //invoice1.printData(); 
+        // CS Modul 5 
+        // Jobseeker jobseeker = new Jobseeker(1, "Mahasiwa", "tidakpenting@gmail.com", "1234556", "14 juli");
+        // Bonus bonus1 = new Bonus(1, "123", 0, 100000, true);
+        // Bonus bonus2 = new Bonus(1, "123", 100000000, 100000, true);
+        // Location location = new Location("Depok", "Jawa Barat", "Universitas Indonesia");
+        // Recruiter recruiter = new Recruiter(1, "Hansaka", "apaaja", "0811", location);
+        // Job job = new Job(1, 100000000, "Senior Designer", JobCategory.WebDeveloper, recruiter);
+
+        // EwalletPayment e1 = new EwalletPayment(1, job, "14 Juli", jobseeker, status2);
+        // EwalletPayment e2 = new EwalletPayment(2, job, "14 Juli", jobseeker, bonus1, status2);
+        // EwalletPayment e3 = new EwalletPayment(2, job, "14 Juli", jobseeker, bonus2, status2);
         
+        // e1.setTotalFee();
+        // e2.setTotalFee();
+        // e3.setTotalFee();
+        // e1.printData();
+        // e2.printData();
+        // e3.printData();
+
+        // Post Test Modul 5 
         Jobseeker jobseeker = new Jobseeker(1, "Mahasiwa", "tidakpenting@gmail.com", "1234556", "14 juli");
-        Bonus bonus1 = new Bonus(1, "123", 0, 100000, true);
-        Bonus bonus2 = new Bonus(1, "123", 100000000, 100000, true);
         Location location = new Location("Depok", "Jawa Barat", "Universitas Indonesia");
         Recruiter recruiter = new Recruiter(1, "Hansaka", "apaaja", "0811", location);
-        Job job = new Job(1, 100000000, "Senior Designer", JobCategory.WebDeveloper, recruiter);
+        Job job = new Job(1, 10, "Senior Designer", JobCategory.WebDeveloper, recruiter);
+        BankPayment b1 = new BankPayment(1, job, "20 Maret 2020", jobseeker, status2);
+        BankPayment b2 = new BankPayment(1, job, "20 Maret 2020", jobseeker, status2, 7);
 
-        EwalletPayment e1 = new EwalletPayment(1, job, "14 Juli", jobseeker, status2);
-        EwalletPayment e2 = new EwalletPayment(2, job, "14 Juli", jobseeker, bonus1, status2);
-        EwalletPayment e3 = new EwalletPayment(2, job, "14 Juli", jobseeker, bonus2, status2);
-        
-        e1.setTotalFee();
-        e2.setTotalFee();
-        e3.setTotalFee();
-        e1.printData();
-        e2.printData();
-        e3.printData();
+        b1.setTotalFee();
+        b2.setTotalFee();
+
+        b1.printData();
+        b2.printData();
 
     } 
 }

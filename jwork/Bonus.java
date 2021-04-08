@@ -97,14 +97,23 @@ public class Bonus {
     /** 
      * method yang digunakan untuk mmendispay data 
      */
-    public void printData()
-    {
-        System.out.println("id: " + id);
-        System.out.println("referal code: " + referralCode);
-        System.out.println("Extra Fee: " + extraFee);
-        System.out.println("minTotal: " + minTotalFee);
-        System.out.println("active: " + active);
+    // public void printData()
+    // {
+    //     System.out.println("id: " + id);
+    //     System.out.println("referal code: " + referralCode);
+    //     System.out.println("Extra Fee: " + extraFee);
+    //     System.out.println("minTotal: " + minTotalFee);
+    //     System.out.println("active: " + active);
 
+    // }
+
+    public String toString()
+    {
+      return "ID = " + id + 
+            "\nReferral Code = " + referralCode + 
+            "\nExtra Fee = " + extraFee +
+            "\nMin Total Fee = " + minTotalFee + 
+            "\nActive Status = " + active; 
     }
 
    

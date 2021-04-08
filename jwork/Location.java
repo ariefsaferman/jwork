@@ -79,11 +79,18 @@ public class Location
         this.description = description; 
     }
     
-    public  void printData()
+    // public  void printData()
+    // {
+    //     System.out.println("Provinsi: " + province);
+    //     System.out.println("City: " + city);
+    //     System.out.println("Deskripsi: " + description);
+    // }
+
+    public String toString()
     {
-        System.out.println("Provinsi: " + province);
-        System.out.println("City: " + city);
-        System.out.println("Deskripsi: " + description);
+      return "Province = " + province + 
+            "\nCity = " + city + 
+            "\nDescription = " + description;
     }
     
 }

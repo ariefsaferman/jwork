@@ -119,12 +119,20 @@ public class Recruiter
         this.location = location;
     }
     
-    public void printData()
+    // public void printData()
+    // {
+    //     System.out.println("Id: " + id);
+    //     System.out.println("Nama Perekrut: " + name);
+    //     System.out.println("Email Perekrut: " + email);
+    //     System.out.println("Nomer HP Perekrut: " + phoneNumber);
+    //     System.out.println("Lokasi Perekrut: " + location.getCity());
+    // }
+
+    public String toString()
     {
-        System.out.println("Id: " + id);
-        System.out.println("Nama Perekrut: " + name);
-        System.out.println("Email Perekrut: " + email);
-        System.out.println("Nomer HP Perekrut: " + phoneNumber);
-        System.out.println("Lokasi Perekrut: " + location.getCity());
+      return "ID = " + id + 
+            "\nName = " + name + 
+            "\nPhoneNumber = " + phoneNumber +
+            "\nLocation = " + location;
     }
 }

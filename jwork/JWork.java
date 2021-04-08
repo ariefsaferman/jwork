@@ -79,18 +79,22 @@ public class JWork
         // e3.printData();
 
         // Post Test Modul 5 
-        Jobseeker jobseeker = new Jobseeker(1, "Mahasiwa", "tidakpenting@gmail.com", "1234556", "14 juli");
-        Location location = new Location("Depok", "Jawa Barat", "Universitas Indonesia");
-        Recruiter recruiter = new Recruiter(1, "Hansaka", "apaaja", "0811", location);
-        Job job = new Job(1, 10, "Senior Designer", JobCategory.WebDeveloper, recruiter);
-        BankPayment b1 = new BankPayment(1, job, "20 Maret 2020", jobseeker, status2);
-        BankPayment b2 = new BankPayment(1, job, "20 Maret 2020", jobseeker, status2, 7);
+        // Jobseeker jobseeker = new Jobseeker(1, "Mahasiwa", "tidakpenting@gmail.com", "1234556", "14 juli");
+        // Location location = new Location("Depok", "Jawa Barat", "Universitas Indonesia");
+        // Recruiter recruiter = new Recruiter(1, "Hansaka", "apaaja", "0811", location);
+        // Job job = new Job(1, 10, "Senior Designer", JobCategory.WebDeveloper, recruiter);
+        // BankPayment b1 = new BankPayment(1, job, "20 Maret 2020", jobseeker, status2);
+        // BankPayment b2 = new BankPayment(1, job, "20 Maret 2020", jobseeker, status2, 7);
 
-        b1.setTotalFee();
-        b2.setTotalFee();
+        // b1.setTotalFee();
+        // b2.setTotalFee();
 
-        b1.printData();
-        b2.printData();
+        // b1.printData();
+        // b2.printData();
+
+        Jobseeker jobseeker = new Jobseeker(1, "Arief Saferman", "..arief@gmail.com", "123",14/07/2000 );
+        Jobseeker jobseeker2 = new Jobseeker(1, "Arief Saferman", "..arief@gmail.com", "123",14/07/2000 );
+        Jobseeker jobseeker3 = new Jobseeker(1, "Arief Saferman", "..arief@gmail.com", "123",14/07/2000 );
 
     } 
 }

@@ -14,6 +14,7 @@ import java.util.Calendar;
 import java.util.GregorianCalendar;
 import java.util.regex.Pattern;
 import java.util.regex.*;
+import java.text.SimpleDateFormat;
 
 public class Jobseeker
 {
@@ -28,8 +29,6 @@ public class Jobseeker
         setPassword(password);
         this.id = id; 
         this.name = name; 
-        this.email = email; 
-        this.password = password; 
         this.joinDate = joinDate; 
     }
 
@@ -39,8 +38,6 @@ public class Jobseeker
         setPassword(password);
         this.id = id; 
         this.name = name; 
-        this.email = email; 
-        this.password = password; 
         this.joinDate = new GregorianCalendar(year, month, dayOfMonth);
     }
 
@@ -50,8 +47,6 @@ public class Jobseeker
         setPassword(password);
         this.id = id; 
         this.name = name; 
-        this.email = email; 
-        this.password = password; 
     }
     
     /** 
@@ -135,7 +130,7 @@ public class Jobseeker
      */
     public void setPassword(String password)
     {
-        Pattern p = Pattern.compile("[0-9a-zA-Z]{6,}");
+        Pattern p = Pattern.compile("^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])[a-zA-Z[0-9]]{6,}$");
         Matcher matcher = p.matcher(password);
         if(matcher.find()){
             this.password = password;
@@ -162,7 +157,7 @@ public class Jobseeker
      */
     public void setEmail(String email)
     {
-        Pattern p = Pattern.compile("^(?!.*([.])\1)[^.][a-zA-Z0-9.&*_~]+@[^-. ][a-zA-Z0-9-.&*_~]+(?:[a-zA-Z0-9-]+)*");
+        Pattern p = Pattern.compile("[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[A-Za-z0-9](?:[a-z0-9-]*[a-z0-9])?.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?");
         Matcher matcher = p.matcher(email); 
         if(matcher.find()){
             this.email = email; 
@@ -196,10 +191,20 @@ public class Jobseeker
     // }
     public String toString()
     {
-      return "ID = " + id + 
+      SimpleDateFormat date = new SimpleDateFormat("dd MMMM yyyy");
+      if(joinDate != null){
+        String tanggal = date.format(joinDate.getTime());
+        return "ID = " + id + 
             "\nName = " + name + 
             "\nEmail = " + email +
             "\nPassword = " + password +
-            "\nJoin Date = " + joinDate ;
+            "\nJoin Date = " + tanggal;
+      }else{
+        return "ID = " + id + 
+        "\nName = " + name + 
+        "\nEmail = " + email +
+        "\nPassword = " + password;
+      }
+      
     }
 }

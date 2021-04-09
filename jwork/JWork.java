@@ -1,4 +1,6 @@
 
+import java.util.GregorianCalendar;
+
 public class JWork
 {
     public static void main(String[] agrs)
@@ -91,10 +93,18 @@ public class JWork
 
         // b1.printData();
         // b2.printData();
+        GregorianCalendar calender = new GregorianCalendar(2021, 07, 14);
+        Jobseeker jobseeker = new Jobseeker(1, "Arief Saferman", "..arief@gmail.com", "123", calender);
+        Jobseeker jobseeker2 = new Jobseeker(2, "Salman", "arief.saferman@gmail.com", "Saferman14", 2021, 07, 14);
+        Jobseeker jobseeker3 = new Jobseeker(3, "Aldo", "..arief@gmail.com", "123");
 
-        Jobseeker jobseeker = new Jobseeker(1, "Arief Saferman", "..arief@gmail.com", "123",14/07/2000 );
-        Jobseeker jobseeker2 = new Jobseeker(1, "Arief Saferman", "..arief@gmail.com", "123",14/07/2000 );
-        Jobseeker jobseeker3 = new Jobseeker(1, "Arief Saferman", "..arief@gmail.com", "123",14/07/2000 );
+        System.out.println(jobseeker.toString()); 
+        System.out.println(jobseeker2.toString()); 
+        System.out.println(jobseeker3.toString()); 
+
+        jobseeker.setEmail("salman.alfarisi@gmail.com");
+        jobseeker.setPassword("salmanAiueo10");
+        System.out.println(jobseeker.toString());
 
     } 
 }

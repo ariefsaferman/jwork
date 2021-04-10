@@ -1,3 +1,5 @@
+import java.text.SimpleDateFormat;
+
 public class BankPayment extends Invoice{
     private static final PaymentType PAYMENT_TYPE = PaymentType.BankPayment; 
     private int adminFee; 
@@ -31,24 +33,38 @@ public class BankPayment extends Invoice{
     public void setTotalFee()
     {
         if(adminFee != 0 ){
-            super.totalFee = super.getJob().getFee() - adminFee; 
+            totalFee = getJob().getFee() - adminFee; 
         } else{
-            super.totalFee = super.getJob().getFee();
+            totalFee = getJob().getFee();
         }
 
     }
 
-    public void printData()
+    // public void printData()
+    // {
+    //     System.out.println("=========== Invoice =========== ");
+    //     System.out.println("ID: " + getId());
+    //     System.out.println("Job: " + getJob().getName());
+    //     System.out.println("Date: " + getDate());
+    //     System.out.println("Jobseeker: " + getJobseeker().getName()); 
+    //     System.out.println("Admin Fee: " + adminFee);
+    //     System.out.println("Total Fee: " + getTotalFee());
+    //     System.out.println("Status: " + getStatus());
+    //     System.out.println("Payment Type: " + PAYMENT_TYPE);
+    // }
+
+    public String toString()
     {
-        System.out.println("=========== Invoice =========== ");
-        System.out.println("ID: " + super.getId());
-        System.out.println("Job: " + super.getJob().getName());
-        System.out.println("Date: " + super.getDate());
-        System.out.println("Jobseeker: " + super.getJobseeker().getName()); 
-        System.out.println("Admin Fee: " + adminFee);
-        System.out.println("Total Fee: " + super.getTotalFee());
-        System.out.println("Status: " + super.getStatus());
-        System.out.println("Payment Type: " + PAYMENT_TYPE);
+        SimpleDateFormat tanggal = new SimpleDateFormat("dd MMMM yyyy");
+        return ("=========== Invoice =========== ") +
+        ("ID: " + getId()) +
+        ("Job: " + getJob().getName()) +
+        ("Date: " + tanggal.format(getDate().getTime())) +
+        ("Jobseeker: " + getJobseeker().getName()) +
+        ("Admin Fee: " + adminFee) +
+        ("Total Fee: " + getTotalFee()) +
+        ("Status: " + getStatus()) +
+        ("Payment Type: " + PAYMENT_TYPE);
     }
 
 

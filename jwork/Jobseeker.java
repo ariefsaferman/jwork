@@ -132,7 +132,7 @@ public class Jobseeker
     {
         Pattern p = Pattern.compile("^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])[a-zA-Z[0-9]]{6,}$");
         Matcher matcher = p.matcher(password);
-        if(matcher.find()){
+        if(matcher.matches()){
             this.password = password;
         }
         else{
@@ -157,9 +157,9 @@ public class Jobseeker
      */
     public void setEmail(String email)
     {
-        Pattern p = Pattern.compile("[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[A-Za-z0-9](?:[a-z0-9-]*[a-z0-9])?.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?");
+        Pattern p = Pattern.compile("(?!.*\\.{2,})(?!\\.)[0-9A-z.&*_~]+@(?!-)[0-9A-z&*_~.-]+");
         Matcher matcher = p.matcher(email); 
-        if(matcher.find()){
+        if(matcher.matches()){
             this.email = email; 
         }else{
             this.email = " "; 

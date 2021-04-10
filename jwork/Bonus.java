@@ -84,7 +84,7 @@ public class Bonus {
      * method yang digunakan untuk mendapat status dari bonus 
      */
     public Boolean getActive() {
-        return this.active;
+        return active;
     }
 
      /** 

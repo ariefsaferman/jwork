@@ -1,3 +1,6 @@
+import java.util.Calendar;
+import java.util.GregorianCalendar;
+
 /**
  * 
  *
@@ -17,16 +20,15 @@ abstract class Invoice
 
     private int id; 
     private Job job; 
-    private String date; 
+    private Calendar date; 
     protected int totalFee; 
     private Jobseeker jobseeker; 
     private InvoiceStatus invoiceStatus; 
 
-    public Invoice(int id, Job job, String date, Jobseeker jobseeker, InvoiceStatus invoiceStatus)
+    public Invoice(int id, Job job, Jobseeker jobseeker, InvoiceStatus invoiceStatus)
     {
         this.id = id; 
         this.job = job; 
-        this.date = date; 
         this.jobseeker = jobseeker; 
         this.invoiceStatus = invoiceStatus; 
         // this.id = id;
@@ -55,7 +57,7 @@ abstract class Invoice
         return invoiceStatus;
     }
 
-    public void setStatus(InvoiceStatus status) {
+    public void setStatus(InvoiceStatus invoiceStatus) {
         this.invoiceStatus = invoiceStatus;
     }
     
@@ -72,7 +74,7 @@ abstract class Invoice
      * method untuk mendapatkan tanggal dari invoice dibuat 
      * @return String mengembalikan tanggal invoice 
      */
-    public String getDate()
+    public Calendar getDate()
     {
         return date;
     }
@@ -108,18 +110,23 @@ abstract class Invoice
      * mutator/setter mengubah nilai idJob 
      * @param idJob Menyimpan nilai idJob yang diubah 
      */
-    public void setIdJobs(Job job)
-    {
-        this.job = job; 
-    }
+    // public void setIdJobs(Job job)
+    // {
+    //     this.job = job; 
+    // }
     
     /** 
      * Method yang digunakan untuk mengubah tanggal invoice 
      * @param date Digunakan untuk menyimpan nilai tanggal yang diubah 
      */
-    public void setDate(String date)
+    public void setDate(Calendar date)
     {
-        this.date = date;
+        this.date = new GregorianCalendar();
+    }
+
+    public Calendar setDate(int year, int month, int dayOfMonth)
+    {
+        return this.date = new GregorianCalendar(year, month, dayOfMonth);
     }
     
     /** 
@@ -140,5 +147,7 @@ abstract class Invoice
     /**
      * method yang digunakan untuk mengeprint data 
      */
-    public abstract void printData();
+    // public abstract void printData();
+
+    public abstract String toString();
 }

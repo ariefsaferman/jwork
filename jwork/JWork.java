@@ -63,15 +63,13 @@ public class JWork
         //invoice1.printData(); 
         // CS Modul 5 
         // Jobseeker jobseeker = new Jobseeker(1, "Mahasiwa", "tidakpenting@gmail.com", "1234556", "14 juli");
-        // Bonus bonus1 = new Bonus(1, "123", 0, 100000, true);
-        // Bonus bonus2 = new Bonus(1, "123", 100000000, 100000, true);
-        // Location location = new Location("Depok", "Jawa Barat", "Universitas Indonesia");
-        // Recruiter recruiter = new Recruiter(1, "Hansaka", "apaaja", "0811", location);
-        // Job job = new Job(1, 100000000, "Senior Designer", JobCategory.WebDeveloper, recruiter);
+        Bonus bonus1 = new Bonus(1, "123", 0, 100000, true);
+        Bonus bonus2 = new Bonus(1, "123", 100000000, 100000, true);
+        Location location = new Location("Depok", "Jawa Barat", "Universitas Indonesia");
+        Recruiter recruiter = new Recruiter(1, "Hansaka", "apaaja", "0811", location);
+        Job job = new Job(1, 100000000, "Senior Designer", JobCategory.WebDeveloper, recruiter);
 
-        // EwalletPayment e1 = new EwalletPayment(1, job, "14 Juli", jobseeker, status2);
-        // EwalletPayment e2 = new EwalletPayment(2, job, "14 Juli", jobseeker, bonus1, status2);
-        // EwalletPayment e3 = new EwalletPayment(2, job, "14 Juli", jobseeker, bonus2, status2);
+       
         
         // e1.setTotalFee();
         // e2.setTotalFee();
@@ -97,6 +95,10 @@ public class JWork
         Jobseeker jobseeker = new Jobseeker(1, "Arief Saferman", "..arief@gmail.com", "123", calender);
         Jobseeker jobseeker2 = new Jobseeker(2, "Salman", "arief.saferman@gmail.com", "Saferman14", 2021, 07, 14);
         Jobseeker jobseeker3 = new Jobseeker(3, "Aldo", "..arief@gmail.com", "123");
+        EwalletPayment e1 = new EwalletPayment(1, job, "14 Juli", jobseeker, status2);
+        EwalletPayment e2 = new EwalletPayment(2, job, "14 Juli", jobseeker, bonus1, status2);
+        EwalletPayment e3 = new EwalletPayment(2, job, "14 Juli", jobseeker, bonus2, status2);
+        BankPayment b1 = new BankPayment(1, job, "14/07/2000", jobseeker, status2); 
 
         System.out.println(jobseeker.toString()); 
         System.out.println(jobseeker2.toString()); 
@@ -105,6 +107,12 @@ public class JWork
         jobseeker.setEmail("salman.alfarisi@gmail.com");
         jobseeker.setPassword("salmanAiueo10");
         System.out.println(jobseeker.toString());
+
+        //PT Modul 5 
+        System.out.println(e1.toString());
+        System.out.println(b1.toString());
+
+
 
     } 
 }

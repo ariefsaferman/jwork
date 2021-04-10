@@ -1,3 +1,5 @@
+import java.text.SimpleDateFormat;
+
 /**
  * 
  *
@@ -9,6 +11,7 @@
 public class EwalletPayment extends Invoice {
     private static final PaymentType PAYMENT_TYPE = PaymentType.EwalletPayment; 
     private Bonus bonus; 
+    private String kode; 
 
     // Constructor pertama 
     EwalletPayment(int id, Job job, String date, Jobseeker jobseeker, InvoiceStatus invoiceStatus)
@@ -54,10 +57,10 @@ public class EwalletPayment extends Invoice {
      */
     public void setTotalFee()
     {
-        if(bonus != null && bonus.getActive() == true && super.getJob().getFee() > bonus.getMinTotalFee()){
-            super.totalFee = super.getJob().getFee() + bonus.getExtraFee();
+        if(bonus != null && bonus.getActive() == true && getJob().getFee() > bonus.getMinTotalFee()){
+            totalFee = getJob().getFee() + bonus.getExtraFee();
         } else{
-            super.totalFee = super.getJob().getFee(); 
+            totalFee = getJob().getFee(); 
         }
     }
 
@@ -65,20 +68,37 @@ public class EwalletPayment extends Invoice {
     /**
      * method yang digunakan untuk printData invoice 
      */
-    public void printData()
+    // public void printData()
+    // {
+    //     System.out.println("====== Invoice ====== " + 
+    //     "\nid = " + getId() + 
+    //     "\nJob = " + getJob().getName() +
+    //     "\nDate = " + getDate() + 
+    //     "\nJob seeker = " + getJobseeker().getName());
+    //     if(bonus != null){
+    //         System.out.println("kode referal:" + bonus.getReferralCode());
+    //     }
+
+    //     System.out.println("Total Fee = " + getTotalFee() +
+    //     "\n Status = " + getStatus() + 
+    //     "\n Payment Type = " + PAYMENT_TYPE);
+    // }
+
+    public String toString()
     {
-        System.out.println("====== Invoice ====== " + 
-        "\nid = " + super.getId() + 
-        "\nJob = " + super.getJob().getName() +
-        "\nDate = " + super.getDate() + 
-        "\nJob seeker = " + super.getJobseeker().getName());
+        SimpleDateFormat tanggal = new SimpleDateFormat("dd MMMM yyyy");
         if(bonus != null){
-            System.out.println("kode referal:" + bonus.getReferralCode());
+            kode = bonus.getReferralCode();
         }
 
-        System.out.println("Total Fee = " + super.getTotalFee() +
-        "\n Status = " +super.getStatus() + 
-        "\n Payment Type = " + PAYMENT_TYPE);
+        return "ID =  " + getId() + 
+        "\nJob = "  + getJob().getName() +
+        "\nDate = " + tanggal.format(getDate().getTime()) + 
+        "\nJob seeker = " + getJobseeker().getName() +
+        "\nKode Referal = " + kode +
+        "\n Total Fee = " +  getTotalFee() + 
+        "\n Payment Type = " + PAYMENT_TYPE;
+         
     }
 
    

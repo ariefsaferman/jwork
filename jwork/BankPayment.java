@@ -4,14 +4,14 @@ public class BankPayment extends Invoice{
     private static final PaymentType PAYMENT_TYPE = PaymentType.BankPayment; 
     private int adminFee; 
 
-    BankPayment(int id, Job job, String date, Jobseeker jobseeker, InvoiceStatus status)
+    BankPayment(int id, Job job, Jobseeker jobseeker, InvoiceStatus status)
     {
-        super(id, job, date, jobseeker, status);
+        super(id, job, jobseeker, status);
     }
 
-    BankPayment(int id, Job job, String date, Jobseeker jobseeker, InvoiceStatus status, int adminFee)
+    BankPayment(int id, Job job, Jobseeker jobseeker, InvoiceStatus status, int adminFee)
     {
-        super(id, job, date, jobseeker, status);
+        super(id, job, jobseeker, status);
         this.adminFee = adminFee; 
     }
 

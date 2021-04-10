@@ -95,9 +95,9 @@ public class JWork
         Jobseeker jobseeker = new Jobseeker(1, "Arief Saferman", "..arief@gmail.com", "123", calender);
         Jobseeker jobseeker2 = new Jobseeker(2, "Salman", "arief.saferman@gmail.com", "Saferman14", 2021, 07, 14);
         Jobseeker jobseeker3 = new Jobseeker(3, "Aldo", "..arief@gmail.com", "123");
-        EwalletPayment e1 = new EwalletPayment(1, job, "14 Juli", jobseeker, status2);
-        EwalletPayment e2 = new EwalletPayment(2, job, "14 Juli", jobseeker, bonus1, status2);
-        EwalletPayment e3 = new EwalletPayment(2, job, "14 Juli", jobseeker, bonus2, status2);
+        EwalletPayment e1 = new EwalletPayment(1, job, jobseeker, status2);
+        EwalletPayment e2 = new EwalletPayment(2, job, jobseeker, bonus1, status2);
+        EwalletPayment e3 = new EwalletPayment(2, job, jobseeker, bonus2, status2);
         BankPayment b1 = new BankPayment(1, job, "14/07/2000", jobseeker, status2); 
 
         System.out.println(jobseeker.toString()); 

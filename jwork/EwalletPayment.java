@@ -14,15 +14,15 @@ public class EwalletPayment extends Invoice {
     private String kode; 
 
     // Constructor pertama 
-    EwalletPayment(int id, Job job, String date, Jobseeker jobseeker, InvoiceStatus invoiceStatus)
+    EwalletPayment(int id, Job job, Jobseeker jobseeker, InvoiceStatus invoiceStatus)
     {
-        super(id, job, date, jobseeker, invoiceStatus); 
+        super(id, job, jobseeker, invoiceStatus); 
     }
 
     // Constructor kedua 
     EwalletPayment(int id, Job job, String date, Jobseeker jobseeker, Bonus bonus, InvoiceStatus invoiceStatus)
     {
-        super(id, job, date, jobseeker, invoiceStatus);
+        super(id, job, jobseeker, invoiceStatus);
         this.bonus = bonus; 
     }
 

@@ -53,18 +53,19 @@ public class BankPayment extends Invoice{
     //     System.out.println("Payment Type: " + PAYMENT_TYPE);
     // }
 
+    @Override
     public String toString()
     {
         SimpleDateFormat tanggal = new SimpleDateFormat("dd MMMM yyyy");
-        return ("=========== Invoice =========== ") +
-        ("ID: " + getId()) +
-        ("Job: " + getJob().getName()) +
-        ("Date: " + tanggal.format(getDate().getTime())) +
-        ("Jobseeker: " + getJobseeker().getName()) +
-        ("Admin Fee: " + adminFee) +
-        ("Total Fee: " + getTotalFee()) +
-        ("Status: " + getStatus()) +
-        ("Payment Type: " + PAYMENT_TYPE);
+        return "\n=========== Bank Payment =========== "+
+        "\nID: " + getId() +
+        "\nJob: " + getJob().getName()+
+        "\nDate: " + tanggal.format(getDate().getTime()) +
+        "\nJobseeker: " + getJobseeker().getName() +
+        "\nAdmin Fee: " + adminFee +
+        "\nTotal Fee: " + getTotalFee() +
+        "\nStatus: " + getStatus() +
+        "\nPayment Type: " + PAYMENT_TYPE;
     }
 
 

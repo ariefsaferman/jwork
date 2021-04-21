@@ -1,4 +1,5 @@
 import java.text.SimpleDateFormat;
+import java.util.Calendar;
 
 /**
  * 
@@ -11,7 +12,7 @@ import java.text.SimpleDateFormat;
 public class EwalletPayment extends Invoice {
     private static final PaymentType PAYMENT_TYPE = PaymentType.EwalletPayment; 
     private Bonus bonus; 
-    private String kode; 
+    
 
     // Constructor pertama 
     EwalletPayment(int id, Job job, Jobseeker jobseeker, InvoiceStatus invoiceStatus)
@@ -20,7 +21,7 @@ public class EwalletPayment extends Invoice {
     }
 
     // Constructor kedua 
-    EwalletPayment(int id, Job job, String date, Jobseeker jobseeker, Bonus bonus, InvoiceStatus invoiceStatus)
+    EwalletPayment(int id, Job job, Jobseeker jobseeker, Bonus bonus, InvoiceStatus invoiceStatus)
     {
         super(id, job, jobseeker, invoiceStatus);
         this.bonus = bonus; 
@@ -84,14 +85,18 @@ public class EwalletPayment extends Invoice {
     //     "\n Payment Type = " + PAYMENT_TYPE);
     // }
 
+    @Override
     public String toString()
     {
+        String kode = " "; 
+
         SimpleDateFormat tanggal = new SimpleDateFormat("dd MMMM yyyy");
-        if(bonus != null){
+        if(bonus != null && bonus.getActive() && totalFee > bonus.getMinTotalFee()){
             kode = bonus.getReferralCode();
         }
 
-        return "ID =  " + getId() + 
+        return "========== Ewallet Payment ===========" +
+        "\nID =  " + getId() + 
         "\nJob = "  + getJob().getName() +
         "\nDate = " + tanggal.format(getDate().getTime()) + 
         "\nJob seeker = " + getJobseeker().getName() +

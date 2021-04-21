@@ -27,6 +27,7 @@ abstract class Invoice
 
     public Invoice(int id, Job job, Jobseeker jobseeker, InvoiceStatus invoiceStatus)
     {
+        this.date = new GregorianCalendar();
         this.id = id; 
         this.job = job; 
         this.jobseeker = jobseeker; 
@@ -121,12 +122,12 @@ abstract class Invoice
      */
     public void setDate(Calendar date)
     {
-        this.date = new GregorianCalendar();
+        this.date = date;
     }
 
-    public Calendar setDate(int year, int month, int dayOfMonth)
+    public void setDate(int year, int month, int dayOfMonth)
     {
-        return this.date = new GregorianCalendar(year, month, dayOfMonth);
+        this.date = new GregorianCalendar(year, month, dayOfMonth);
     }
     
     /** 

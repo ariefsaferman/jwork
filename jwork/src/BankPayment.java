@@ -15,21 +15,37 @@ public class BankPayment extends Invoice{
         this.adminFee = adminFee; 
     }
 
+     /** 
+     * method yang digunakan untuk mendapatkan tipe payment 
+     * @return payment type mengebalikan nilai tipe payment
+     */
     public PaymentType getPaymentType()
     {
         return PAYMENT_TYPE; 
     }
 
+     /** 
+     * method yang digunakan untuk mendapatkan admin fee
+     * @return int mengebalikan nilai adminfee  
+     */
     public int getAdminFee()
     {
         return adminFee;
     }
 
+    /** 
+     * method yang digunakan untuk mengubah admin fee
+     * @return int mengebalikan nilai adminfee  
+     */
     public void setAdminFee(int adminFee)
     {
         this.adminFee = adminFee; 
     }
 
+    /** 
+     * method yang digunakan untuk mengubah total fee 
+     * @return int mengebalikan nilai totalFee 
+     */
     public void setTotalFee()
     {
         if(adminFee != 0 ){

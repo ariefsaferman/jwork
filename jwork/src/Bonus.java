@@ -24,7 +24,6 @@ public class Bonus {
 
      /** 
      * method yang digunakan untuk mendapatkan id dari bonus
-     * @param id menerima passing variabel integer yang merupakan idjob 
      * @return int mengebalikan nilai id job 
      */
     public int getId() {

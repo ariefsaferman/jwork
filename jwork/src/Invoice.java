@@ -132,7 +132,7 @@ abstract class Invoice
     
     /** 
      * method yang digunakan untuk mengubah totalFee 
-     * @param totalFee menyimpan nilai totalFee yang diubah 
+     *
      */
     public abstract void setTotalFee();
     

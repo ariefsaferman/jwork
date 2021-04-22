@@ -1,3 +1,5 @@
+import java.util.ArrayList;
+
 /**
  * 
  * Class DatabaseJob akan berfungsi sebagai 
@@ -9,7 +11,9 @@
  */
 public class DatabaseJob
 {
-    public static String[] listJob = {}; 
+    public static String[] listJob = {};
+    private static ArrayList<Job> JOB_DATABASE;
+    private static int lastId = 0;
     
     /** 
      * Method addJob untuk menambah list job pada database
@@ -18,7 +22,9 @@ public class DatabaseJob
      */
     public static boolean addJob(Job job)
     {
-        return false; 
+        JOB_DATABASE.add(job);
+        lastId = job.getId();
+        return true;
     }
     
     
@@ -29,9 +35,56 @@ public class DatabaseJob
      */
     public static boolean removeJob(Job job)
     {
-        return false; 
+        for (Job jobb : JOB_DATABASE) {
+            if (job.getId() == jobb.getId()) {
+                JOB_DATABASE.remove(job);
+                return true;
+            }
+        }
+        return false;
     }
-    
+
+    public static ArrayList<Job> getJobDatabase(){
+        return JOB_DATABASE;
+    }
+
+    public static int getLastId(){
+        return lastId;
+    }
+
+    public static Job getJobById(int id){
+        Job x = null;
+        for (Job job : JOB_DATABASE) {
+            if (id == job.getId()) {
+                x = job;
+            }
+        }
+        return x;
+    }
+
+    public static ArrayList<Job> getJobByRecruiter(int recruiterId){
+        ArrayList<Job> temp = new ArrayList<Job>();
+        for (Job job : JOB_DATABASE) {
+            if (recruiterId == job.getRecruiter().getId()) {
+                temp.add(job);
+            } else {
+                return null;
+            }
+        }
+        return temp;
+    }
+
+    public static ArrayList<Job> getJobByCategory(JobCategory category){
+        ArrayList<Job> x = new ArrayList<Job>();
+        for (Job job : JOB_DATABASE) {
+            if (category == job.getCategory()) {
+                x.add(job);
+            } else {
+                return null;
+            }
+        }
+        return x;
+    }
     
     /** 
      * @return Job mengembalikkan nilai yang di dapat dari list 

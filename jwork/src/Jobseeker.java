@@ -56,7 +56,7 @@ public class Jobseeker
      *  @param id parameter ini digunakan untuk menyimpan value ID 
      * @return dia akan mengembalikan dari ID yang diberikan oleh perusahaan 
          */
-    public int getID()
+    public int getId()
     {
         return id;
     }

@@ -114,28 +114,44 @@ public class JWork
         // //PT Modul 5 
         // System.out.println(e1.toString());
         // System.out.println(b1.toString());
-        Calendar tanggal = new GregorianCalendar(2021, 07, 14);
-        Jobseeker jobseeker = new Jobseeker(1, "Mahasiwa", "tidakpenting@gmail.com", "1234556", tanggal);
-        Location location = new Location("Depok", "Jawa Barat", "Universitas Indonesia");
-        Recruiter recruiter = new Recruiter(1, "Hansaka", "apaaja", "0811", location);
-        Job job = new Job(1, 10, "Senior Designer", JobCategory.WebDeveloper, recruiter);
+//        Calendar tanggal = new GregorianCalendar(2021, 07, 14);
+//        Jobseeker jobseeker = new Jobseeker(1, "Mahasiwa", "tidakpenting@gmail.com", "1234556", tanggal);
+//        Location location = new Location("Depok", "Jawa Barat", "Universitas Indonesia");
+//        Recruiter recruiter = new Recruiter(1, "Hansaka", "apaaja", "0811", location);
+//        Job job = new Job(1, 10, "Senior Designer", JobCategory.WebDeveloper, recruiter);
+//
+//        InvoiceStatus status1 = InvoiceStatus.Cancelled;
+//        InvoiceStatus status2 = InvoiceStatus.Finished;
+//        InvoiceStatus status3 = InvoiceStatus.OnGoing;
+//
+//        Bonus bonus1 = new Bonus(1, "123", 0, 100000, true);
+//        Bonus bonus2 = new Bonus(1, "123", 100000000, 100000, true);
+//
+//        EwalletPayment e1 = new EwalletPayment(1, job, jobseeker, status2);
+//        // EwalletPayment e2 = new EwalletPayment(2, job, jobseeker, bonus1, status2);
+//        // EwalletPayment e3 = new EwalletPayment(2, job, jobseeker, bonus2, status2);
+//
+//        BankPayment b1 = new BankPayment(1, job, jobseeker, status2);
+//
+//        System.out.println(e1.toString());
+//        System.out.println(b1.toString());
 
-        InvoiceStatus status1 = InvoiceStatus.Cancelled;
-        InvoiceStatus status2 = InvoiceStatus.Finished;
-        InvoiceStatus status3 = InvoiceStatus.OnGoing;
-
-        Bonus bonus1 = new Bonus(1, "123", 0, 100000, true);
-        Bonus bonus2 = new Bonus(1, "123", 100000000, 100000, true);
-
-        EwalletPayment e1 = new EwalletPayment(1, job, jobseeker, status2);
-        // EwalletPayment e2 = new EwalletPayment(2, job, jobseeker, bonus1, status2);
-        // EwalletPayment e3 = new EwalletPayment(2, job, jobseeker, bonus2, status2);
-
-        BankPayment b1 = new BankPayment(1, job, jobseeker, status2);
-
-        System.out.println(e1.toString());
-        System.out.println(b1.toString());
-
-
+        Location location1 = new Location("DKI Jakarta", "Jakarta Pusat", "Tanah Abang");
+        DatabaseRecruiter.addRecruiter(new Recruiter(DatabaseRecruiter.getLastId() + 1, "Arief", "arief@example.com", "0218770", location1));
+        DatabaseJobseeker.addJobseeker(new Jobseeker(DatabaseJobseeker.getLastId() + 1, "Arief", "arief@example.com", "SafermanArief14", 2021, 04, 6));
+        DatabaseJobseeker.addJobseeker(new Jobseeker(DatabaseJobseeker.getLastId() + 1 , "Titus Zarek", "titus.zarek@ui.ac.id", "Titus14Zarek", 2021, 04, 6));
+        System.out.println(DatabaseJobseeker.getJobDatabase());
+//        DatabaseJob.addJob(new Job(1, "Backend Engineer Solusimas", DatabaseRecruiter.getRecruiterById(1), 10000, JobCategory.BackEnd));
+//        DatabaseJob.addJob(new Job(1, "Engineer Backend masSoulsi", DatabaseRecruiter.getRecruiterById(1), 20000, JobCategory.BackEnd));
+//        DatabaseJob.addJob(new Job(1, "Frontend Engineer Solusimas", DatabaseRecruiter.getRecruiterById(1), 10000, JobCategory.FrontEnd));
+//        DatabaseJobseeker.addJobseeker(new Jobseeker(DatabaseJobseeker.getLastId() + 1, "Arief", "arief@ui.ac.id", "ariefSaferman123", 2021, 03 ,6));
+//        System.out.println(DatabaseJobseeker.addJobseeker(new Jobseeker(DatabaseJobseeker.getLastId() + 1, "Arief", "arief@ui.ac.id", "ariefSaferman123", 2021, 03 ,6)));
+//        System.out.println(DatabaseRecruiter.addRecruiter(new Recruiter(DatabaseRecruiter.getLastId() + 1, "Arief", "arief@example.com", "0218770", location1)));
+//        System.out.println(DatabaseJobseeker.addJobseeker(new Jobseeker(DatabaseJobseeker.getLastId() + 1, "Arief", "arief@example.com", "SafermanArief14", 2021, 04, 6)));
+//        System.out.println(DatabaseJobseeker.addJobseeker(new Jobseeker(DatabaseJobseeker.getLastId() + 1 , "Titus Zarek", "titus.zarek@ui.ac.id", "Titus14Zarek", 2021, 04, 6)));
+        DatabaseJob.addJob(new Job(1, 1000, "Data Analyst", JobCategory.FrontEnd, DatabaseRecruiter.getRecruiterById(1)));
+        DatabaseJob.addJob(new Job(2, 2000, "Data Scientist", JobCategory.FrontEnd, DatabaseRecruiter.getRecruiterById(1)));
+        DatabaseJob.addJob(new Job(3, 3000, "Software Engineer", JobCategory.FrontEnd, DatabaseRecruiter.getRecruiterById(1)));
+        System.out.println(DatabaseJob.getJobByCategory(JobCategory.BackEnd));
     } 
 }

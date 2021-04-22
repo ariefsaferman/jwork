@@ -1,4 +1,6 @@
+import java.lang.reflect.Array;
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Calendar;
 
 /**
@@ -15,15 +17,15 @@ public class EwalletPayment extends Invoice {
     
 
     // Constructor pertama 
-    EwalletPayment(int id, Job job, Jobseeker jobseeker, InvoiceStatus invoiceStatus)
+    EwalletPayment(int id, ArrayList<Job> jobs, Jobseeker jobseeker)
     {
-        super(id, job, jobseeker, invoiceStatus); 
+        super(id, jobs, jobseeker);
     }
 
     // Constructor kedua 
-    EwalletPayment(int id, Job job, Jobseeker jobseeker, Bonus bonus, InvoiceStatus invoiceStatus)
+    EwalletPayment(int id, ArrayList<Job> jobs, Jobseeker jobseeker, Bonus bonus)
     {
-        super(id, job, jobseeker, invoiceStatus);
+        super(id, jobs, jobseeker);
         this.bonus = bonus; 
     }
 
@@ -58,11 +60,16 @@ public class EwalletPayment extends Invoice {
      */
     public void setTotalFee()
     {
-        if(bonus != null && bonus.getActive() == true && getJob().getFee() > bonus.getMinTotalFee()){
-            totalFee = getJob().getFee() + bonus.getExtraFee();
-        } else{
-            totalFee = getJob().getFee(); 
+        ArrayList<Job> jobs = getJobs();
+        for(Job job: jobs){
+            int fee = job.getFee();
+            if(bonus != null && bonus.getActive() == true && fee > bonus.getMinTotalFee()){
+                totalFee = fee + bonus.getExtraFee();
+            } else{
+                totalFee = fee;
+            }
         }
+
     }
 
    
@@ -88,21 +95,34 @@ public class EwalletPayment extends Invoice {
     @Override
     public String toString()
     {
-        String kode = " "; 
+        String kode = " ";
+        String res = "";
 
         SimpleDateFormat tanggal = new SimpleDateFormat("dd MMMM yyyy");
         if(bonus != null && bonus.getActive() && totalFee > bonus.getMinTotalFee()){
             kode = bonus.getReferralCode();
         }
 
-        return "========== Ewallet Payment ===========" +
-        "\nID =  " + getId() + 
-        "\nJob = "  + getJob().getName() +
-        "\nDate = " + tanggal.format(getDate().getTime()) + 
-        "\nJob seeker = " + getJobseeker().getName() +
-        "\nKode Referal = " + kode +
-        "\n Total Fee = " +  getTotalFee() + 
-        "\n Payment Type = " + PAYMENT_TYPE;
+        for(Job job : getJobs()){
+            if ((bonus != null) && (bonus.getActive() == true) && (job.getFee() > bonus.getMinTotalFee())) {
+                res.concat("\nId = " + getId() + "\nJob = " + job.getName() + "\nDate = " + tanggal.format(getDate().getTime()) + "\nJob Seeker = "
+                        + getJobseeker().getName() + "\nReferral Code = " + bonus.getReferralCode() + "\nTotal Fee = "
+                        + getTotalFee() + "\nStatus = " + getStatus() + "\nPayment = " + PAYMENT_TYPE);
+            }else {
+                res.concat("\nId = " + getId() + "\nJob = " + job.getName() + "\nDate = " + tanggal.format(getDate().getTime()) + "\nJob Seeker = "
+                        + getJobseeker().getName() + bonus.getReferralCode() + "\nTotal Fee = "
+                        + getTotalFee() + "\nStatus = " + getStatus() + "\nPayment = " + PAYMENT_TYPE);
+            }
+        }
+        return res;
+//        return "========== Ewallet Payment ===========" +
+//        "\nID =  " + getId() +
+//        "\nJob = "  + getJobs() +
+//        "\nDate = " + tanggal.format(getDate().getTime()) +
+//        "\nJob seeker = " + getJobseeker().getName() +
+//        "\nKode Referal = " + kode +
+//        "\n Total Fee = " +  getTotalFee() +
+//        "\n Payment Type = " + PAYMENT_TYPE;
          
     }
 

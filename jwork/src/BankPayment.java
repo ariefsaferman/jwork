@@ -1,17 +1,19 @@
+import java.lang.reflect.Array;
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 
 public class BankPayment extends Invoice{
     private static final PaymentType PAYMENT_TYPE = PaymentType.BankPayment; 
     private int adminFee; 
 
-    BankPayment(int id, Job job, Jobseeker jobseeker, InvoiceStatus status)
+    BankPayment(int id, ArrayList<Job> jobs, Jobseeker jobseeker)
     {
-        super(id, job, jobseeker, status);
+        super(id, jobs, jobseeker);
     }
 
-    BankPayment(int id, Job job, Jobseeker jobseeker, InvoiceStatus status, int adminFee)
+    BankPayment(int id, ArrayList<Job> jobs, Jobseeker jobseeker, int adminFee)
     {
-        super(id, job, jobseeker, status);
+        super(id, jobs, jobseeker);
         this.adminFee = adminFee; 
     }
 
@@ -48,12 +50,15 @@ public class BankPayment extends Invoice{
      */
     public void setTotalFee()
     {
-        if(adminFee != 0 ){
-            totalFee = getJob().getFee() - adminFee; 
-        } else{
-            totalFee = getJob().getFee();
+        ArrayList<Job> jobs = getJobs();
+        for(Job job: jobs) {
+            int fee = job.getFee();
+            if(adminFee != 0 ){
+                totalFee += fee - adminFee;
+            } else{
+                totalFee += fee;
+            }
         }
-
     }
 
     // public void printData()
@@ -73,15 +78,26 @@ public class BankPayment extends Invoice{
     public String toString()
     {
         SimpleDateFormat tanggal = new SimpleDateFormat("dd MMMM yyyy");
-        return "\n=========== Bank Payment =========== "+
-        "\nID: " + getId() +
-        "\nJob: " + getJob().getName()+
-        "\nDate: " + tanggal.format(getDate().getTime()) +
-        "\nJobseeker: " + getJobseeker().getName() +
-        "\nAdmin Fee: " + adminFee +
-        "\nTotal Fee: " + getTotalFee() +
-        "\nStatus: " + getStatus() +
-        "\nPayment Type: " + PAYMENT_TYPE;
+        String kode = "";
+        for (Job job : getJobs()) {
+            if (adminFee != 0) {
+                kode.concat("\nId = " + getId() + "\nJob = " + job.getName() + "\nDate = " + tanggal.format(getDate().getTime()) + "\nJob Seeker = "
+                        + getJobseeker().getName() + "\nAdmin Fee = " + adminFee + "\nTotal Fee = " + getTotalFee() + "\nStatus = " + getStatus() + "\nPayment = " + PAYMENT_TYPE);
+            } else {
+                kode.concat("\nId = " + getId() + "\nJob = " + job.getName() + "\nDate = " + tanggal.format(getDate().getTime()) + "\nJob Seeker = "
+                        + getJobseeker().getName() + "\nTotal Fee = " + getTotalFee() + "\nStatus = " + getStatus() + "\nPayment = " + PAYMENT_TYPE);
+            }
+        }
+        return  kode;
+//        return "\n=========== Bank Payment =========== "+
+//        "\nID: " + getId() +
+//        "\nJob: " + getJobs()+
+//        "\nDate: " + tanggal.format(getDate().getTime()) +
+//        "\nJobseeker: " + getJobseeker().getName() +
+//        "\nAdmin Fee: " + adminFee +
+//        "\nTotal Fee: " + getTotalFee() +
+//        "\nStatus: " + getStatus() +
+//        "\nPayment Type: " + PAYMENT_TYPE;
     }
 
 

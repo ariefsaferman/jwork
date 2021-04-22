@@ -27,8 +27,7 @@ public class Job
     }
 
     /** 
-     * method yang digunakan untuk mendapatkan id dari pekerjaan 
-     * @param id menerima passing variabel integer yang merupakan idjob 
+     * method yang digunakan untuk mendapatkan id dari pekerjaan
      * @return int mengebalikan nilai id job 
      */
     public int getId()

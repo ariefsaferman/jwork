@@ -12,7 +12,7 @@ import java.util.ArrayList;
 public class DatabaseJob
 {
     public static String[] listJob = {};
-    private static ArrayList<Job> JOB_DATABASE;
+    private static ArrayList<Job> JOB_DATABASE = new ArrayList<Job>();
     private static int lastId = 0;
     
     /** 
@@ -53,13 +53,13 @@ public class DatabaseJob
     }
 
     public static Job getJobById(int id){
-        Job x = null;
-        for (Job job : JOB_DATABASE) {
-            if (id == job.getId()) {
-                x = job;
+        Job temp = null;
+        for (int i = 0; i < JOB_DATABASE.size(); i++) {
+            if (id == JOB_DATABASE.get(i).getId()) {
+                temp = JOB_DATABASE.get(i);
             }
         }
-        return x;
+        return temp;
     }
 
     public static ArrayList<Job> getJobByRecruiter(int recruiterId){
@@ -75,32 +75,30 @@ public class DatabaseJob
     }
 
     public static ArrayList<Job> getJobByCategory(JobCategory category){
-        ArrayList<Job> x = new ArrayList<Job>();
-        for (Job job : JOB_DATABASE) {
-            if (category == job.getCategory()) {
-                x.add(job);
-            } else {
-                return null;
+        ArrayList<Job> temp = new ArrayList<Job>();
+        for (int i = 0; i < JOB_DATABASE.size(); i++) {
+            if (category == JOB_DATABASE.get(i).getCategory()) {
+                temp.add(JOB_DATABASE.get(i));
             }
         }
-        return x;
+        return temp;
     }
     
-    /** 
-     * @return Job mengembalikkan nilai yang di dapat dari list 
-     */
-    public static Job getJob()
-    {
-        return null; 
-    }
-    
-    
-    /** 
-     * @return String[] untuk menyimpan seluruh list job yang ada 
-     */
-    public static String[] getListJob()
-    {
-        return listJob;
-    }
+//    /**
+//     * @return Job mengembalikkan nilai yang di dapat dari list
+//     */
+//    public static Job getJob()
+//    {
+//        return null;
+//    }
+//
+//
+//    /**
+//     * @return String[] untuk menyimpan seluruh list job yang ada
+//     */
+//    public static String[] getListJob()
+//    {
+//        return listJob;
+//    }
     
 }

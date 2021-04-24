@@ -48,6 +48,10 @@ abstract class Invoice
 
     public abstract PaymentType getPaymentType();
 
+    public void setInvoiceStatus(InvoiceStatus invoiceStatus)
+    {
+        this.invoiceStatus = invoiceStatus; 
+    }
     public ArrayList<Job> getJobs()
     {
         return jobs;

@@ -33,15 +33,21 @@ public class DatabaseJob
      * @param job  untuk menerima variabel yang ingin dihapus 
      * @return boolean memberikan tanda bahwa ada ingin item yang ingin dihapus 
      */
-    public static boolean removeJob(Job job)
+    public static boolean removeJob(int id) throws JobNotFoundException
     {
-        for (Job jobb : JOB_DATABASE) {
-            if (job.getId() == jobb.getId()) {
-                JOB_DATABASE.remove(job);
-                return true;
+        boolean status = false;
+        for (Job element : JOB_DATABASE) {
+            if (element.getId() == id) {
+                JOB_DATABASE.remove(element);
+                status = true;
+                break;
             }
         }
-        return false;
+        if (!status){
+            throw new JobNotFoundException(id);
+        }
+
+        return status;
     }
 
     public static ArrayList<Job> getJobDatabase(){
@@ -52,14 +58,20 @@ public class DatabaseJob
         return lastId;
     }
 
-    public static Job getJobById(int id){
-        Job temp = null;
-        for (int i = 0; i < JOB_DATABASE.size(); i++) {
-            if (id == JOB_DATABASE.get(i).getId()) {
-                temp = JOB_DATABASE.get(i);
+    public static Job getJobById(int id) throws JobNotFoundException
+    {
+        Job result = null;
+        for (Job element : JOB_DATABASE) {
+            if (element.getId() == id) {
+                result = element;
+                return result;
             }
         }
-        return temp;
+        if (result == null){
+            throw new JobNotFoundException(id);
+        }
+
+        return result;
     }
 
     public static ArrayList<Job> getJobByRecruiter(int recruiterId){

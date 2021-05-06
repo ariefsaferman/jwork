@@ -13,14 +13,16 @@ public class DatabaseBonus {
         return lastId;
     }
 
-    public static Bonus getBonusById(int id){
-        Bonus x = null;
+    public static Bonus getBonusById(int id) throws BonusNotFoundException {
+        Bonus temp = null;
+
         for (Bonus bonus : BONUS_DATABASE) {
             if (id == bonus.getId()) {
-                x = bonus;
+                temp = bonus;
+                return temp;
             }
         }
-        return x;
+        throw new BonusNotFoundException(id);
     }
 
     public static Bonus getBonusByRefferalCode(String refferalCode){
@@ -36,11 +38,11 @@ public class DatabaseBonus {
      * method yang digunakan untuk menambah bonus 
      * @return Bonus untuk mengembalikan ada bonus atau tidak
      */
-    public static Boolean addBonus(Bonus bonus)
+    public static Boolean addBonus(Bonus bonus) throws ReferralCodeAlreadyExistsException
     {
         for (Bonus element : BONUS_DATABASE) {
-            if (bonus.getReferralCode() == element.getReferralCode()) {
-                return false;
+            if (element.getReferralCode() == bonus.getReferralCode()) {
+                throw new ReferralCodeAlreadyExistsException(bonus);
             }
         }
         BONUS_DATABASE.add(bonus);
@@ -75,14 +77,19 @@ public class DatabaseBonus {
      * @param id bonus yang ingin dihapus
      * @return Bonus menghapus bonus 
      */
-    public Boolean removeBonus(int id)
+    public Boolean removeBonus(int id) throws ReferralNotFoundException
     {
-        for (Bonus bonus : BONUS_DATABASE) {
-            if (bonus.getId() == id) {
-                BONUS_DATABASE.remove(bonus);
-                return true;
+        try{
+            for (Bonus bonus : BONUS_DATABASE) {
+                if (bonus.getId() == id) {
+                    BONUS_DATABASE.remove(bonus);
+                    return true;
+                }
             }
         }
+       catch(Exception e){
+           throw new ReferralNotFoundException(id);
+       }
         return false;
     }
 

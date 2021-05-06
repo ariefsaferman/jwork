@@ -1,5 +1,6 @@
 
 import java.sql.Date;
+import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.GregorianCalendar;
 
@@ -136,7 +137,7 @@ public class JWork
 //        System.out.println(e1.toString());
 //        System.out.println(b1.toString());
 
-        // Location location1 = new Location("DKI Jakarta", "Jakarta Pusat", "Tanah Abang");
+        Location location1 = new Location("DKI Jakarta", "Jakarta Pusat", "Tanah Abang");
         // DatabaseRecruiter.addRecruiter(new Recruiter(1, "Arief", "arief@example.com", "0218770", location1));
         // DatabaseJobseeker.addJobseeker(new Jobseeker(DatabaseJobseeker.getLastId() + 1, "Arief", "arief@example.com", "SafermanArief14", 2021, 04, 6));
         // DatabaseJobseeker.addJobseeker(new Jobseeker(DatabaseJobseeker.getLastId() + 1, "Arief", "arief@example.com", "SafermanArief14", 2021, 04, 6));
@@ -157,12 +158,84 @@ public class JWork
         // System.out.println(DatabaseJob.getJobByCategory(JobCategory.FrontEnd));
 
         // PT Modul 6 
-        DatabaseBonus.addBonus(new Bonus(1, "JKL40", 1000, 500, false));
-        DatabaseBonus.addBonus(new Bonus(2, "JKL40", 1000, 500, true));
+        // DatabaseBonus.addBonus(new Bonus(1, "JKL40", 1000, 500, false));
+        // DatabaseBonus.addBonus(new Bonus(2, "JKL40", 1000, 500, true));
 
-        System.out.println(DatabaseBonus.getBonusById(1));
-        System.out.println(DatabaseBonus.getBonusById(2));
+        // System.out.println(DatabaseBonus.getBonusById(1));
+        // System.out.println(DatabaseBonus.getBonusById(2));
 
-        DatabaseJob
+        // ArrayList<Job> job1 = new ArrayList<Job>(); 
+        // job1.add(new Job(1, 1000, "Arief", JobCategory.DataScientist, new Recruiter(1, "Titus", "titus@example.com", "021", location1)));
+        // ArrayList<Job> job2 = new ArrayList<Job>();
+        // job2.add(new Job(2, 2000, "Arief", JobCategory.DataScientist, new Recruiter(1, "Titus", "titus@example.com", "021", location1)));
+
+        // BankPayment b1 = new BankPayment(1, job1, DatabaseJobseeker.getJobseekerById(1));
+        
+        // CS Modul 7 
+        try {
+            DatabaseJobseeker.addJobseeker(new Jobseeker(1, "Arief",
+                            "arief.saferman@gmail.com", "Arief123", 2021, 04, 22));
+    } catch (EmailAlreadyExistsException e) {
+            System.out.println(e.getMessage());
+    }
+    try {
+            DatabaseJobseeker.addJobseeker(new Jobseeker(2, "Saferman",
+                            "arief.saferman@gmail.com", "Arief123", 2021, 04, 23));
+    } catch (EmailAlreadyExistsException e) {
+            System.out.println(e.getMessage());
+    }
+    try {
+            DatabaseJobseeker.addJobseeker(new Jobseeker(3, "Max",
+                            "Max@ui.ac.id", "LALAs123", 2021, 03, 6));
+    } catch (EmailAlreadyExistsException e) {
+            System.out.println(e.getMessage());
+    }
+    try {
+            DatabaseJobseeker.addJobseeker(new Jobseeker(4, "Fucini",
+                    "Fucini@ui.ac.id", "Facili123", 2021, 03, 6));
+    } catch (EmailAlreadyExistsException e) {
+            System.out.println(e.getMessage());
+    }
+
+    try {
+            DatabaseBonus.addBonus(new Bonus(101, "Mers", 200000, 500000, false));
+    } catch (ReferralCodeAlreadyExistsException e) {
+            System.out.println(e.getMessage());
+    }
+    try {
+            DatabaseBonus.addBonus(new Bonus(101, "Mers", 200000, 500000, true));
+    } catch (ReferralCodeAlreadyExistsException e) {
+            System.out.println(e.getMessage());
+    }
+System.out.println("=========Database JobSeeker============");
+    System.out.println(DatabaseJobseeker.getJobDatabase());
+
+    System.out.println("=========Database Bonus===============");
+    System.out.println(DatabaseBonus.getBonusDatabase());
+   
+    //Buat Thread 
+    Recruiter recruiter = new Recruiter(1, "Hansaka", "apaaja", "0811", location1);
+    Job job1 = new Job(1, 100, "arief", JobCategory.BackEnd, recruiter);
+    try {
+
+        Jobseeker js1 = DatabaseJobseeker.getJobseekerById(1);
+        Jobseeker js2 = DatabaseJobseeker.getJobseekerById(3);
+        Jobseeker js3 = DatabaseJobseeker.getJobseekerById(4);
+
+        Location l = new Location("California", "Silicon Valley", "Headquarter");
+        Recruiter r = new Recruiter(1, "Mark Zuckerberg", "mark@facebook.com", "0123123", l);
+        DatabaseJob.addJob(new Job(1, 1000, "Facebook UI Designer",JobCategory.UI, recruiter));
+
+        DatabaseInvoice.addInvoice(new BankPayment(1, DatabaseJob.getJobDatabase(), js1));
+        DatabaseInvoice.addInvoice(new BankPayment(2, DatabaseJob.getJobDatabase(), js2));
+        DatabaseInvoice.addInvoice(new BankPayment(3, DatabaseJob.getJobDatabase(), js3));
+
+    } catch (JobSeekerNotFoundException e) {
+        System.out.print(e.getMessage());
+        return;
+    }
+    Thread thread1 = new Thread(new FeeCalculator());
+    thread1.start();
+   
     } 
 }

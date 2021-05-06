@@ -16,18 +16,16 @@ public class DatabaseRecruiter
         return lastId;
     }
 
-    public static Recruiter getRecruiterById(int id)
+    public static Recruiter getRecruiterById(int id) throws RecruiterNotFoundException
     {
-        Recruiter tempVar = null;
+        Recruiter temp = null;
         for (Recruiter recruiter: RECRUITER_DATABASE) {
-            if (id == recruiter.getId()){
-                tempVar = recruiter;
-            }
-            else{
-                tempVar =  null;
+            if (id == recruiter.getId()) {
+                temp = recruiter;
+                return temp;
             }
         }
-        return tempVar;
+        throw new RecruiterNotFoundException(id);
     }
     /** 
      * method yang digunakan untuk menambah rekruiter
@@ -46,19 +44,17 @@ public class DatabaseRecruiter
      * @param recruiter as Recruiter 
      * @return boolean untuk menghapus/tidak 
      */
-    public static boolean removeRecruiter(int id)
+    public static boolean removeRecruiter(int id) throws RecruiterNotFoundException
     {
-        boolean tempBool = true;
+        boolean temp = true;
         for (Recruiter recruiter: RECRUITER_DATABASE) {
-            if (id == recruiter.getId()){
+            if (id == recruiter.getId()) {
                 RECRUITER_DATABASE.remove(id);
-                tempBool = true;
-            }
-            else{
-                tempBool = false;
+                temp = true;
+                return temp;
             }
         }
-        return tempBool;
+            throw new RecruiterNotFoundException(id);
     }
 
     /** 

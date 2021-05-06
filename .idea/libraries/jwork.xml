@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="jwork">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/jwork/package-search-index.zip!/" />
+      <root url="jar://$PROJECT_DIR$/jwork/member-search-index.zip!/" />
+      <root url="jar://$PROJECT_DIR$/jwork/type-search-index.zip!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

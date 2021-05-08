@@ -12,12 +12,16 @@ public class DatabaseInvoice {
         return lastId;
     }
 
-    public static Invoice getInvoiceById(int id){
+    public static Invoice getInvoiceById(int id) throws InvoiceNotFoundException
+    {
         Invoice x = null;
         for (Invoice a : INVOICE_DATABASE) {
             if (id == a.getId()) {
                 x = a;
             }
+        }
+        if(x == null){
+            throw new InvoiceNotFoundException(id);
         }
         return x;
     }
@@ -35,7 +39,7 @@ public class DatabaseInvoice {
 
     public static boolean changeInvoiceStatus(int id, InvoiceStatus invoiceStatus){
         for (Invoice invoice : INVOICE_DATABASE) {
-            if (invoice.getStatus() == InvoiceStatus.OnGoing){
+            if (invoice.getStatus() == InvoiceStatus.OnGoing && invoice.getJobseeker().getId() == invoice.getJobseeker().getId()){
                 invoice.setStatus(invoiceStatus);
                 return true;
             }
@@ -43,18 +47,21 @@ public class DatabaseInvoice {
         return false;
     }
 
-    public static boolean addInvoice(Invoice invoice){
+    public static boolean addInvoice(Invoice invoice) throws OngoingAlreadyExistsException
+    {
         for (Invoice invoicee : INVOICE_DATABASE) {
-            if (invoicee.getId() == invoice.getId()) {
-                return false;
+            if (invoicee.getStatus() == InvoiceStatus.OnGoing) {
+                throw new OngoingAlreadyExistsException(invoice);
             }
         }
         INVOICE_DATABASE.add(invoice);
         lastId = invoice.getId();
+
+
         return true;
     }
 
-    public static boolean removeInvoice(int id)
+    public static boolean removeInvoice(int id) throws InvoiceNotFoundException
     {
         boolean temp = true;
         for (Invoice invoice: INVOICE_DATABASE) {
@@ -65,6 +72,9 @@ public class DatabaseInvoice {
             else{
                 temp = false;
             }
+        }
+        if (temp == false){
+            throw new InvoiceNotFoundException(id);
         }
         return temp;
     }

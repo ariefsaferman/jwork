@@ -7,8 +7,8 @@ public class RecruiterNotFoundException extends Exception{
         recruiter_error = recruiter_input;
     }
 
-    public String getMessage()
-    {
-        return super.getMessage() + recruiter_error + "Not FOund";
+    @Override
+    public String getMessage() {
+        return super.getMessage();
     }
 }

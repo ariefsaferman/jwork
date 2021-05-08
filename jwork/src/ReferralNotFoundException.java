@@ -6,6 +6,7 @@ public class ReferralNotFoundException extends Exception {
         referral_code_error = referral_code_input;
     }
 
+    @Override
     public String getMessage() {
         return super.getMessage() + referral_code_error + " not found";
     }

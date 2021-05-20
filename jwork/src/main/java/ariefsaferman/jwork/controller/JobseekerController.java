@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.*;
 public class JobseekerController
 {
 
+
     @RequestMapping("")
     public String indexPage(@RequestParam(value="name", defaultValue="world") String name)
     {
@@ -27,8 +28,8 @@ public class JobseekerController
         return jobseeker;
     }
 
-    @RequestMapping(value = "", method = RequestMethod.POST)
-    public Jobseeker addJobseeker(@RequestParam(value="name") String name,
+    @RequestMapping(value = "/register", method = RequestMethod.POST)
+    public Jobseeker registerJobseeker(@RequestParam(value="name") String name,
                                   @RequestParam(value="email") String email,
                                   @RequestParam(value="password") String password)
     {
@@ -40,5 +41,11 @@ public class JobseekerController
             return null;
         }
         return jobseeker;
+    }
+
+    @RequestMapping(value = "/login", method = RequestMethod.POST)
+    public Jobseeker loginJobseeker(@RequestParam(value="email") String email,
+                                    @RequestParam(value="password") String password){
+        return(DatabaseJobseeker.jobseekerLogin(email, password));
     }
 }

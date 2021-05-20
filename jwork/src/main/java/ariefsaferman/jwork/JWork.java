@@ -7,6 +7,32 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 public class JWork
 {
     public static void main(String[] args){
+        JobCategory listJob1 = JobCategory.BackEnd;
+        JobCategory listJob2 = JobCategory.DataAnalyst;
+        JobCategory listJob3 = JobCategory.DataScientist;
+        JobCategory listJob4 = JobCategory.Devops;
+        JobCategory listJob5 = JobCategory.FrontEnd;
+        JobCategory listJob6 = JobCategory.UI;
+        JobCategory listJob7 = JobCategory.UX;
+        JobCategory listJob8 = JobCategory.WebDeveloper;
+
+        Location location1 = new Location("DKI Jakarta", "Jakarta Timur", "Ondel-ondel");
+        Location location2 = new Location("Sumatra Utara", "Medan", "Pika Ambon");
+        Location location3 = new Location("Papua", "Ambawarawa", "Kapas Pembesar");
+
+        DatabaseRecruiter.addRecruiter(new Recruiter(1, "Arief", "arief.saferman@gmail.com", "021-81190", location1));
+        DatabaseRecruiter.addRecruiter(new Recruiter(2, "Salman", "salman.123@gmail.com", "021-8888", location2));
+        DatabaseRecruiter.addRecruiter(new Recruiter(3, "Faran", "farhan.almashur@gmail.com", "021-1111", location3));
+
+        try {
+            DatabaseJob.addJob(new Job(1, 10, "Mark", listJob1, DatabaseRecruiter.getRecruiterById(1)));
+            DatabaseJob.addJob(new Job(2, 100, "Will", listJob1, DatabaseRecruiter.getRecruiterById(2)));
+            DatabaseJob.addJob(new Job(3, 1000, "John", listJob2, DatabaseRecruiter.getRecruiterById(3)));
+            DatabaseJob.addJob(new Job(4, 10000, "Tato", listJob3, DatabaseRecruiter.getRecruiterById(3)));
+        } catch (RecruiterNotFoundException e) {
+            e.getMessage();
+        }
+
         SpringApplication.run(JWork.class, args);
 
 
@@ -27,14 +53,14 @@ public class JWork
         // DatabaseRecruiter.addRecruiter(recruiter);
 
         // Tugas 1 bagian C 
-        JobCategory listJob1 = JobCategory.BackEnd;
-        JobCategory listJob2 = JobCategory.DataAnalyst;
-        JobCategory listJob3 = JobCategory.DataScientist;
-        JobCategory listJob4 = JobCategory.Devops;
-        JobCategory listJob5 = JobCategory.FrontEnd;
-        JobCategory listJob6 = JobCategory.UI;
-        JobCategory listJob7 = JobCategory.UX;
-        JobCategory listJob8 = JobCategory.WebDeveloper;
+//        JobCategory listJob1 = JobCategory.BackEnd;
+//        JobCategory listJob2 = JobCategory.DataAnalyst;
+//        JobCategory listJob3 = JobCategory.DataScientist;
+//        JobCategory listJob4 = JobCategory.Devops;
+//        JobCategory listJob5 = JobCategory.FrontEnd;
+//        JobCategory listJob6 = JobCategory.UI;
+//        JobCategory listJob7 = JobCategory.UX;
+//        JobCategory listJob8 = JobCategory.WebDeveloper;
 
         // System.out.println(listJob1);
         // System.out.println(listJob2);
@@ -139,7 +165,7 @@ public class JWork
 //        System.out.println(e1.toString());
 //        System.out.println(b1.toString());
 
-        Location location1 = new Location("DKI Jakarta", "Jakarta Pusat", "Tanah Abang");
+//        Location location1 = new Location("DKI Jakarta", "Jakarta Pusat", "Tanah Abang");
         // DatabaseRecruiter.addRecruiter(new Recruiter(1, "Arief", "arief@example.com", "0218770", location1));
         // DatabaseJobseeker.addJobseeker(new Jobseeker(DatabaseJobseeker.getLastId() + 1, "Arief", "arief@example.com", "SafermanArief14", 2021, 04, 6));
         // DatabaseJobseeker.addJobseeker(new Jobseeker(DatabaseJobseeker.getLastId() + 1, "Arief", "arief@example.com", "SafermanArief14", 2021, 04, 6));

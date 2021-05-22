@@ -12,7 +12,7 @@ import java.util.GregorianCalendar;
  * 
  */
 
-abstract class Invoice
+public abstract class Invoice
 {
     // instance variables - replace the example below with your own
     // private int id, totalFee;

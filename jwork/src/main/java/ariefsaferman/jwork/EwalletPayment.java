@@ -24,7 +24,7 @@ public class EwalletPayment extends Invoice {
     }
 
     // Constructor kedua 
-    EwalletPayment(int id, ArrayList<Job> jobs, Jobseeker jobseeker, Bonus bonus)
+    public EwalletPayment(int id, ArrayList<Job> jobs, Jobseeker jobseeker, Bonus bonus)
     {
         super(id, jobs, jobseeker);
         this.bonus = bonus; 

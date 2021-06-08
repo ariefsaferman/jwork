@@ -42,7 +42,7 @@ public class DatabaseBonus {
     public static Boolean addBonus(Bonus bonus) throws ReferralCodeAlreadyExistsException
     {
         for (Bonus element : BONUS_DATABASE) {
-            if (element.getReferralCode() == bonus.getReferralCode()) {
+            if (element.getReferralCode().equals(bonus.getReferralCode())) {
                 throw new ReferralCodeAlreadyExistsException(bonus);
         }
         }

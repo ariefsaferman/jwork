@@ -36,8 +36,7 @@ public class Job
     }
     
     /** 
-     * accessor yang digunakan untuk mendapatkan nama pekerjaan 
-     * @param name menerima nama pekerja 
+     * accessor yang digunakan untuk mendapatkan nama pekerjaan
      * @return String mengembalikan nama pekerja 
      */
     public String getName()
@@ -47,8 +46,7 @@ public class Job
     
     
     /** 
-     * accessor yang digunakan untuk menginisiasi nilai fee 
-     * @param fee menerima passing parameter untuk nilai fee 
+     * accessor yang digunakan untuk menginisiasi nilai fee
      * @return int mengembalikan nilai fee yang sudah di set 
      */
     public int getFee()

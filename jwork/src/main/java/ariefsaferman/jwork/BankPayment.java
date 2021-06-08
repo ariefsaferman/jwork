@@ -7,7 +7,7 @@ public class BankPayment extends Invoice{
     private static final PaymentType PAYMENT_TYPE = PaymentType.BankPayment; 
     private int adminFee; 
 
-    BankPayment(int id, ArrayList<Job> jobs, Jobseeker jobseeker)
+    public BankPayment(int id, ArrayList<Job> jobs, Jobseeker jobseeker)
     {
         super(id, jobs, jobseeker);
     }

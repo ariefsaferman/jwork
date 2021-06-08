@@ -58,8 +58,6 @@ public class DatabaseInvoice
         }
         INVOICE_DATABASE.add(invoice);
         lastId = invoice.getId();
-
-
         return true;
     }
 
@@ -68,8 +66,9 @@ public class DatabaseInvoice
         boolean temp = true;
         for (Invoice invoice: INVOICE_DATABASE) {
             if (id == invoice.getId()){
-                INVOICE_DATABASE.remove(id);
+                INVOICE_DATABASE.remove(invoice);
                 temp = true;
+                break;
             }
             else{
                 temp = false;
@@ -78,6 +77,7 @@ public class DatabaseInvoice
         if (temp == false){
             throw new InvoiceNotFoundException(id);
         }
+
         return temp;
     }
 }

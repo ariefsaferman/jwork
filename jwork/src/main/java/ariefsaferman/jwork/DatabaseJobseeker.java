@@ -38,7 +38,7 @@ public class DatabaseJobseeker {
     public static boolean addJobseeker(Jobseeker jobseeker) throws EmailAlreadyExistsException
     {
         for (Jobseeker jobseekere : JOBSEEKER_DATABASE) {
-            if (jobseekere.getEmail() == jobseeker.getEmail()) {
+            if (jobseekere.getEmail().equals(jobseeker.getEmail())) {
                 throw new EmailAlreadyExistsException(jobseeker);
             }
         }

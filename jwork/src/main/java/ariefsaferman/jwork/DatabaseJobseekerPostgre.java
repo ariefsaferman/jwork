@@ -1,151 +1,170 @@
 package ariefsaferman.jwork;
 
 import javax.xml.transform.Result;
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.ResultSet;
-import java.sql.Statement;
+import java.sql.*;
+import java.util.ArrayList;
+import java.util.Calendar;
+import java.util.GregorianCalendar;
 
+import static ariefsaferman.jwork.DatabaseConnectionPostgre.connection;
 public class DatabaseJobseekerPostgre
 {
-    public static Connection insertJobSeeker()
+    public static Jobseeker insertJobSeeker(String name, String email, String password)
     {
-        Connection c = null;
-        Statement stmt = null;
-
+        Connection c = connection();
+        PreparedStatement stmt;
+        Jobseeker jobseeker = null;
         try {
-            Class.forName("org.postgresql.Driver");
-            c = DriverManager.getConnection("jdbc:postgresql://5432/jwork", "postgresql", "saferman14");
-            c.setAutoCommit(false);
-            System.out.println("Opened Database Succesfuly");
-
-            stmt = c.createStatement();
-            String sql = "INSERT INTO jobseeker(id, nama, email, tanggal, bulan, tahun, password)"
-                    + "VALUES (1, `Arief`, `arief.saferman@gmail.com`, 14, 07, 2000, `Saferman14`);";
-            stmt.executeUpdate(sql);
-
-            sql = "INSERT INTO jobseeker(id, nama, email, tanggal, bulan, tahun, password)"
-                    + "VALUES (2, `kevin`, `kevin.darmawan@gmail.com`, 12, 12, 2012, `Kevin14`);";
-            stmt.executeUpdate(sql);
-
+            String sql = "INSERT INTO jobseeker(name, email, password) VALUES (?,?,?) RETURNING id;";
+            stmt = c.prepareStatement(sql);
+            stmt.setString(1, name);
+            stmt.setString(2, email);
+            stmt.setString(3, password);
+            ResultSet resultSet = stmt.executeQuery();
+            int id = 1;
+            while (resultSet.next()) {
+                id = resultSet.getInt(1);
+            }
+            jobseeker = new Jobseeker(id, name, email, password);
             stmt.close();
-            c.commit();
             c.close();
-        } catch (Exception e) {
-            System.err.println( e.getClass().getName()+": "+ e.getMessage() );
-            System.exit(0);
+            return jobseeker;
+        } catch (SQLException e) {
+            e.printStackTrace();
         }
-        return c;
+        return jobseeker;
     }
 
-    public static Connection getLastJobseekerId()
+    public static int getLastJobseekerId()
     {
-        Connection c = null;
-        Statement stmt = null;
+        Connection c = connection();
+        PreparedStatement stmt;
+        int id = 0;
         try {
-            Class.forName("org.postgresql.Driver");
-            c = DriverManager.getConnection("jdbc:postgresql://localhost:5432/jwork", "postgresql", "saferman14");
-            c.setAutoCommit(false);
-            System.out.println("Opened database successfully");
-
-            stmt = c.createStatement();
-
-            ResultSet rs = stmt.executeQuery("SELECT id FROM jobseeker ORDER BY id DESC LIMIT 1");
-            while ( rs.next() ) {
-                int id = rs.getInt("id");
-                System.out.println("ID = " + id);
-                System.out.println();
+            String sql = "SELECT id FROM jobseeker ORDER BY id DESC LIMIT 1;";
+            stmt = c.prepareStatement(sql);
+            ResultSet resultSet = stmt.executeQuery();
+            while (resultSet.next()) {
+                id = resultSet.getInt(1);
             }
-            rs.close();
             stmt.close();
             c.close();
-        } catch (Exception e) {
-            System.err.println( e.getClass().getName()+": "+ e.getMessage() );
-            System.exit(0);
+            return id;
+        } catch (SQLException e) {
+            e.printStackTrace();
         }
-        return c;
+        return id;
     }
 
-    public static Connection getJobseeker()
+    public static ArrayList<Jobseeker> getDatabaseJobseeker()
     {
-        Connection c = null;
-        Statement stmt = null;
+        Connection c = connection();
+        PreparedStatement stmt = null;
+
+        ArrayList<Jobseeker> JOBSEEKER_DATABASE = new ArrayList<Jobseeker>();
+        int id = 0;
+        String name = null;
+        String email = null;
+        String password = null;
+        Jobseeker jobseeker = null;
         try {
-            Class.forName("org.postgresql.Driver");
-            c = DriverManager.getConnection("jdbc:postgresql://localhost:5432/jwork", "postgresql", "saferman14");
-            c.setAutoCommit(false);
-            System.out.println("Opened database successfully");
-
-            stmt = c.createStatement();
-
-            ResultSet rs = stmt.executeQuery("SELECT * FROM jobseeker;");
-            while ( rs.next() ) {
-                int id = rs.getInt("id");
-                String name = rs.getString("name");
-                String email = rs.getString("email");
-                int tanggal = rs.getInt("tanggal");
-                int bulan = rs.getInt("bulan");
-                int tahun = rs.getInt("tahun");
-                String password = rs.getString("password");
-                System.out.println("ID = " + id);
-                System.out.println( "NAME = " + name );
-                System.out.println( "EMAIL = " + email );
-                System.out.println( "TANGGAL = " + tanggal );
-                System.out.println( "BULAN = " + bulan );
-                System.out.println( "TAHUN = " + tahun );
-                System.out.println(" PASSWORD = " + password);
-                System.out.println();
+            String sql = "SELECT * FROM jobseeker;";
+            stmt = c.prepareStatement(sql);
+            ResultSet resultSet = stmt.executeQuery();
+            while (resultSet.next()) {
+                id = resultSet.getInt("id");
+                name = resultSet.getString("name");
+                email = resultSet.getString("email");
+                password = resultSet.getString("password");
+                jobseeker = new Jobseeker(id, name, email, password);
+                JOBSEEKER_DATABASE.add(jobseeker);
             }
-            rs.close();
             stmt.close();
             c.close();
-        } catch (Exception e) {
-            System.err.println( e.getClass().getName()+": "+ e.getMessage() );
-            System.exit(0);
+        } catch (SQLException e) {
+            e.printStackTrace();
         }
-        return c;
+        return JOBSEEKER_DATABASE;
     }
 
-    public  static Connection removeJobseeker()
+    public static Boolean removeJobseeker(int id)
     {
-        Connection c = null;
-        Statement stmt = null;
+        Connection c = connection();
+        PreparedStatement stmt;
         try {
-            Class.forName("org.postgresql.Driver");
-            c = DriverManager.getConnection("jdbc:postgresql://localhost:5432/jwork", "postgresql", "saferman14");
-            c.setAutoCommit(false);
-            System.out.println("Opened database successfully");
-
-            stmt = c.createStatement();
-            String sql = "DELETE FROM jobseeker;";
-            stmt.executeUpdate(sql);
-            c.commit();
-
-            ResultSet rs = stmt.executeQuery("SELECT * FROM jobseeker;");
-            while ( rs.next() ) {
-                int id = rs.getInt("id");
-                String name = rs.getString("name");
-                String email = rs.getString("email");
-                int tanggal = rs.getInt("tanggal");
-                int bulan = rs.getInt("bulan");
-                int tahun = rs.getInt("tahun");
-                String password = rs.getString("password");
-                System.out.println("ID = " + id);
-                System.out.println( "NAME = " + name );
-                System.out.println( "EMAIL = " + email );
-                System.out.println( "TANGGAL = " + tanggal );
-                System.out.println( "BULAN = " + bulan );
-                System.out.println( "TAHUN = " + tahun );
-                System.out.println(" PASSWORD = " + password);
-                System.out.println();
-            }
-            rs.close();
+            String sql = "DELETE FROM jobseeker WHERE id = ?;";
+            stmt = c.prepareStatement(sql);
+            stmt.setInt(1, id);
+            stmt.execute();
             stmt.close();
             c.close();
-        } catch (Exception e) {
-            System.err.println( e.getClass().getName()+": "+ e.getMessage() );
-            System.exit(0);
+            return true;
+        } catch (SQLException throwables) {
+            throwables.printStackTrace();
         }
-        return c;
+        return false;
+    }
+
+    public static Jobseeker getJobseeker(String email2, String password2)
+    {
+        Connection c = connection();
+        PreparedStatement stmt;
+        Calendar joinDate = new GregorianCalendar();
+        Jobseeker jobseeker = null;
+
+        try {
+            String sql = "SELECT id, name, email, password, joinDate FROM jobseeker WHERE email =? AND password = ?;";
+            stmt = c.prepareStatement(sql);
+            stmt.setString(1, email2);
+            stmt.setString(2, password2);
+            ResultSet resultSet = stmt.executeQuery();
+            while (resultSet.next()) {
+                int id = resultSet.getInt("id");
+                String name = resultSet.getString("name");
+                String email = resultSet.getString("email");
+                String password = resultSet.getString("password");
+                Date tanggal = resultSet.getDate("joinDate");
+                jobseeker = new Jobseeker(id, name, email, password);
+
+                joinDate.setTime(tanggal);
+                jobseeker.setJoinDate(joinDate);
+            }
+            stmt.close();
+            c.close();
+            return jobseeker;
+        } catch (SQLException throwables) {
+            throwables.printStackTrace();
+        }
+        return jobseeker;
+    }
+
+    public static Jobseeker getJobseeker(int id_jobseeker)
+    {
+        Connection c = connection();
+        PreparedStatement stmt;
+        int id = 0;
+        String name = null;
+        String email = null;
+        String password = null;
+        Jobseeker jobseeker = null;
+
+        try {
+            String sql = "SELECT * FROM jobseeker WHERE id = ?;";
+            stmt = c.prepareStatement(sql);
+            stmt.setInt(1, id_jobseeker);
+            ResultSet resultSet = stmt.executeQuery();
+            while (resultSet.next()) {
+                id = resultSet.getInt("id");
+                name = resultSet.getString("name");
+                email = resultSet.getString("email");
+                password = resultSet.getString("password");
+            }
+            stmt.close();
+            c.close();
+            jobseeker = new Jobseeker(id, name, email, password);
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return jobseeker;
     }
 }

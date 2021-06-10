@@ -16,6 +16,7 @@ public class DatabaseConnectionPostgre
         String db_password = "saferman14";
         try {
             Class.forName("org.postgresql.Driver");
+            c = DriverManager.getConnection("jdbc:postgresql://localhost:5432/" + db_name, db_user, db_password);
         } catch (Exception e) {
             e.printStackTrace();
             System.err.println(e.getClass().getName() + ": " + e.getMessage());

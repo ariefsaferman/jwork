@@ -1,4 +1,4 @@
-package ariefsaferman.jwork;
+package ariefsaferman.jwork.exception;
 public class ReferralNotFoundException extends Exception {
     private int referral_code_error;
 

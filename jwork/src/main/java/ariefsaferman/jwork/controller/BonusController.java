@@ -1,6 +1,8 @@
 package ariefsaferman.jwork.controller;
 
 import ariefsaferman.jwork.*;
+import ariefsaferman.jwork.database_postgre.DatabaseBonusPostgre;
+import ariefsaferman.jwork.exception.ReferralCodeAlreadyExistsException;
 import org.springframework.web.bind.annotation.*;
 import java.util.ArrayList;
 
@@ -9,13 +11,13 @@ import java.util.ArrayList;
 public class BonusController {
     @RequestMapping(value = "", method = RequestMethod.GET)
     public ArrayList<Bonus> getAllBonus() {
-        return (DatabaseBonus.getBonusDatabase());
+        return DatabaseBonusPostgre.getDatabaseBonus();
     }
 
     @RequestMapping("/{referralCode}")
     public Bonus getBonusByReferralCode(
             @PathVariable String referralCode){
-        return(DatabaseBonus.getBonusByRefferalCode(referralCode));
+        return DatabaseBonusPostgre.getBonusByReferralCode(referralCode);
     }
 
     @RequestMapping(value = "", method = RequestMethod.POST)
@@ -26,13 +28,14 @@ public class BonusController {
             @RequestParam(value = "active") boolean active
 
     ) throws ReferralCodeAlreadyExistsException {
-        Bonus bonus = new Bonus(DatabaseBonus.getLastId() + 1, referralCode, extraFee, minTotalFee, active);
-        try {
-            DatabaseBonus.addBonus(bonus);
-        } catch (ReferralCodeAlreadyExistsException e) {
-            e.getMessage();
-            return null;
-        }
-        return bonus;
+//        Bonus bonus = new Bonus(DatabaseBonus.getLastId() + 1, referralCode, extraFee, minTotalFee, active);
+//        try {
+//            DatabaseBonus.addBonus(bonus);
+//        } catch (ReferralCodeAlreadyExistsException e) {
+//            e.getMessage();
+//            return null;
+//        }
+//        return bonus;
+        return DatabaseBonusPostgre.addBonus(referralCode, extraFee,minTotalFee,active);
     }
 }

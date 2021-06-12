@@ -1,12 +1,13 @@
-package ariefsaferman.jwork;
+package ariefsaferman.jwork.database_postgre;
 
-import javax.xml.transform.Result;
+import ariefsaferman.jwork.Jobseeker;
+
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.GregorianCalendar;
 
-import static ariefsaferman.jwork.DatabaseConnectionPostgre.connection;
+import static ariefsaferman.jwork.database_connection.DatabaseConnectionPostgre.connection;
 public class DatabaseJobseekerPostgre
 {
     public static Jobseeker insertJobSeeker(String name, String email, String password)

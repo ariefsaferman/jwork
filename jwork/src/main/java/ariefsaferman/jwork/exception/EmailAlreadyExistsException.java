@@ -1,4 +1,7 @@
-package ariefsaferman.jwork;
+package ariefsaferman.jwork.exception;
+
+import ariefsaferman.jwork.Jobseeker;
+
 public class EmailAlreadyExistsException extends Exception
 {
 

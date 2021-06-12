@@ -1,4 +1,4 @@
-package ariefsaferman.jwork;
+package ariefsaferman.jwork.exception;
 public class BonusNotFoundException extends Exception{
     private int recruiter_error; 
 

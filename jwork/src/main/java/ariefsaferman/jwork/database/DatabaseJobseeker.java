@@ -1,4 +1,8 @@
-package ariefsaferman.jwork;
+package ariefsaferman.jwork.database;
+import ariefsaferman.jwork.exception.EmailAlreadyExistsException;
+import ariefsaferman.jwork.exception.JobSeekerNotFoundException;
+import ariefsaferman.jwork.Jobseeker;
+
 import java.util.ArrayList;
 
 public class DatabaseJobseeker {
@@ -14,7 +18,7 @@ public class DatabaseJobseeker {
         return lastId;
     }
 
-    public static Jobseeker getJobseekerById(int id) throws JobSeekerNotFoundException{
+    public static Jobseeker getJobseekerById(int id) throws JobSeekerNotFoundException {
         Jobseeker temp = null;
 
         for (int i = 0; i < JOBSEEKER_DATABASE.size(); i++) {

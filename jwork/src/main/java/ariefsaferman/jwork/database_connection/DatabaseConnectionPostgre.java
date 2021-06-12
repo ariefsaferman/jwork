@@ -1,4 +1,4 @@
-package ariefsaferman.jwork;
+package ariefsaferman.jwork.database_connection;
 
 import java.sql.Connection;
 import java.sql.DriverManager;

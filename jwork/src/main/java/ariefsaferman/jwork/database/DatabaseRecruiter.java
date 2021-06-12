@@ -1,4 +1,7 @@
-package ariefsaferman.jwork;
+package ariefsaferman.jwork.database;
+import ariefsaferman.jwork.Recruiter;
+import ariefsaferman.jwork.exception.RecruiterNotFoundException;
+
 import java.util.ArrayList;
 
 public class DatabaseRecruiter

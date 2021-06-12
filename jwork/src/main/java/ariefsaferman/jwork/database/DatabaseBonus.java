@@ -1,4 +1,8 @@
-package ariefsaferman.jwork;
+package ariefsaferman.jwork.database;
+import ariefsaferman.jwork.Bonus;
+import ariefsaferman.jwork.exception.BonusNotFoundException;
+import ariefsaferman.jwork.exception.ReferralCodeAlreadyExistsException;
+
 import java.util.ArrayList;
 
 public class DatabaseBonus {

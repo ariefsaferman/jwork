@@ -1,4 +1,9 @@
-package ariefsaferman.jwork;
+package ariefsaferman.jwork.database;
+import ariefsaferman.jwork.Invoice;
+import ariefsaferman.jwork.exception.InvoiceNotFoundException;
+import ariefsaferman.jwork.InvoiceStatus;
+import ariefsaferman.jwork.exception.OngoingInvoiceAlreadyExistsException;
+
 import java.util.ArrayList;
 
 public class DatabaseInvoice 

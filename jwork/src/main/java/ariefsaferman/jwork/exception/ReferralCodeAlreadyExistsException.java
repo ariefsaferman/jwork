@@ -1,4 +1,7 @@
-package ariefsaferman.jwork;
+package ariefsaferman.jwork.exception;
+
+import ariefsaferman.jwork.Bonus;
+
 public class ReferralCodeAlreadyExistsException extends Exception {
 
     private Bonus referral_error;

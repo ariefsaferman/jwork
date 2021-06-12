@@ -1,4 +1,8 @@
-package ariefsaferman.jwork;
+package ariefsaferman.jwork.database;
+import ariefsaferman.jwork.Job;
+import ariefsaferman.jwork.JobCategory;
+import ariefsaferman.jwork.exception.JobNotFoundException;
+
 import java.util.ArrayList;
 
 /**

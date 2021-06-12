@@ -1,4 +1,4 @@
-package ariefsaferman.jwork;
+package ariefsaferman.jwork.exception;
 public class JobNotFoundException extends Exception{
 
     private int job_error;

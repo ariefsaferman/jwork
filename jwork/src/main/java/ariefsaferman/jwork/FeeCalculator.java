@@ -1,4 +1,6 @@
 package ariefsaferman.jwork;
+import ariefsaferman.jwork.database.DatabaseInvoice;
+
 import java.util.ArrayList;
 
 public class FeeCalculator implements Runnable

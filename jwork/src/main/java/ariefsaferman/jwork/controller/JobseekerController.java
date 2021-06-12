@@ -1,6 +1,7 @@
 package ariefsaferman.jwork.controller;
 
 import ariefsaferman.jwork.*;
+import ariefsaferman.jwork.database_postgre.DatabaseJobseekerPostgre;
 import org.springframework.web.bind.annotation.*;
 
 @RequestMapping("/jobseeker")

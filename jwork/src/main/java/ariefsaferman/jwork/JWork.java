@@ -1,7 +1,14 @@
 package ariefsaferman.jwork;
 
+import ariefsaferman.jwork.database.DatabaseJob;
+import ariefsaferman.jwork.database.DatabaseRecruiter;
+import ariefsaferman.jwork.database_postgre.DatabaseJobPostgre;
+import ariefsaferman.jwork.database_postgre.DatabaseRecruiterPostgre;
+import ariefsaferman.jwork.exception.RecruiterNotFoundException;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+
+import java.sql.SQLException;
 
 @SpringBootApplication
 public class JWork
@@ -33,13 +40,10 @@ public class JWork
 //            e.getMessage();
 //        }
 
-        DatabaseRecruiter.addRecruiter(new Recruiter(1, "Mark Zuckerberg", "mark.zuckerbeg@gmail.com", "021-123", location1));
-        try {
-            DatabaseJob.addJob(new Job(1, 1000, "Data Scientist", listJob1, DatabaseRecruiter.getRecruiterById(1)));
-            DatabaseJob.addJob(new Job(2, 2000, "Software Engineer", listJob2, DatabaseRecruiter.getRecruiterById(1)));
-        } catch (RecruiterNotFoundException e) {
-            System.out.println(e.getMessage());
-        }
+
+        DatabaseRecruiterPostgre.addRecruiter(new Recruiter(1, "Mark Zuckerberg", "mark.zuckerbeg@gmail.com", "021-123", location1));
+        DatabaseJobPostgre.addJob(new Job(1, 1000, "DataScientist", listJob1, DatabaseRecruiterPostgre.getRecruiterById(1)));
+        DatabaseJobPostgre.addJob(new Job(2, 2000, "Software Engineer", listJob2, DatabaseRecruiterPostgre.getRecruiterById(1)));
 
         SpringApplication.run(JWork.class, args);
     } 

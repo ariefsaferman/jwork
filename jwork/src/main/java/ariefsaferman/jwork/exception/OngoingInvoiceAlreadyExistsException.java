@@ -1,4 +1,7 @@
-package ariefsaferman.jwork;
+package ariefsaferman.jwork.exception;
+
+import ariefsaferman.jwork.Invoice;
+
 public class OngoingInvoiceAlreadyExistsException extends Exception
 {
     private Invoice invoice_error;

@@ -9,9 +9,20 @@ import java.util.Arrays;
 import java.util.Calendar;
 import java.util.GregorianCalendar;
 import java.util.stream.Collectors;
-
+/**
+ *
+ *
+ * @author Arief Saferman
+ * @version  18 Juni 2021
+ *
+ */
 public class DatabaseInvoicePostgre extends DatabaseConnectionPostgre
 {
+    /**
+     * method yang digunakan untuk menambah invoice
+     * @return boolean
+     * @param invoice object invoice
+     */
     public static boolean addInvoice(Invoice invoice) throws SQLException {
         Connection c = connection();
         PreparedStatement stmt;
@@ -49,6 +60,11 @@ public class DatabaseInvoicePostgre extends DatabaseConnectionPostgre
         return stmt.executeUpdate() != 0 ? true:false;
     }
 
+    /**
+     * method yang digunakan untuk mendapatkan invoice berdasarkan id
+     * @return Invoice
+     * @param id int id dari invoice
+     */
     public static Invoice getInvoiceById(int id) throws SQLException {
         Connection c = connection();
         PreparedStatement stmt;
@@ -86,6 +102,11 @@ public class DatabaseInvoicePostgre extends DatabaseConnectionPostgre
         return invoice;
     }
 
+    /**
+     * method yang digunakan untuk mendapatkan invoice berdasarkan jobseeker
+     * @return ArrayList invoice
+     * @param jobseekerId id dari jobseeker
+     */
     public static ArrayList<Invoice> getInvoiceByJobseeker(int jobseekerId) throws SQLException {
         Connection c = connection();
         PreparedStatement stmt;
@@ -126,6 +147,11 @@ public class DatabaseInvoicePostgre extends DatabaseConnectionPostgre
         return invoices;
     }
 
+    /**
+     * method yang digunakan untuk mengubah invoice
+     * @return boolean
+     * @param invoice object invoice
+     */
     public static boolean changeInvoice(Invoice invoice) throws SQLException {
         Connection c = connection();
 

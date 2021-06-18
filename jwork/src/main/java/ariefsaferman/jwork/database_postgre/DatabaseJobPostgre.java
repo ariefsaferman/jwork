@@ -10,8 +10,20 @@ import java.sql.*;
 import java.util.ArrayList;
 import java.util.ConcurrentModificationException;
 
+/**
+ *
+ *
+ * @author Arief Saferman
+ * @version  18 Juni 2021
+ *
+ */
+
 public class DatabaseJobPostgre extends DatabaseConnectionPostgre
 {
+    /**
+     * method yang digunakan untuk mendapatkan database job
+     * @return arraylist job
+     */
     public static ArrayList<Job> getAllJob()
     {
         Connection c = connection();
@@ -53,6 +65,10 @@ public class DatabaseJobPostgre extends DatabaseConnectionPostgre
 
     }
 
+    /**
+     * method yang digunakan untuk mendapatkan last id dari job
+     * @return int lastid
+     */
     public static int getLastJobId()
     {
         Connection c = connection();
@@ -76,6 +92,11 @@ public class DatabaseJobPostgre extends DatabaseConnectionPostgre
         return id;
     }
 
+    /**
+     * method yang digunakan untuk menambah job ke database
+     * @return object job
+     * @param job menerima parameter objek job
+     */
     public static Job addJob(Job job)
     {
         Connection c = connection();
@@ -112,6 +133,11 @@ public class DatabaseJobPostgre extends DatabaseConnectionPostgre
         return job;
     }
 
+    /**
+     * method yang digunakan untuk mendapatkan job berdasarkan category
+     * @return arraylist job
+     * @param category kategori job
+     */
     public static ArrayList<Job> getJobByCategory(JobCategory category)
     {
         Connection c = connection();
@@ -144,6 +170,11 @@ public class DatabaseJobPostgre extends DatabaseConnectionPostgre
         return job;
     }
 
+    /**
+     * method yang digunakan untuk mendapatkan job berdasarkan recruiternya
+     * @return job
+     * @param recruiterId id dari recruiter
+     */
     public static ArrayList<Job> getJobByRecruiter(int recruiterId)
     {
         Connection c = connection();
@@ -175,6 +206,11 @@ public class DatabaseJobPostgre extends DatabaseConnectionPostgre
         return job;
     }
 
+    /**
+     * method yang digunakan untuk menghapus job
+     * @return boolean
+     * @param id menerima id dari job
+     */
     public static boolean removeJob(int id)
     {
         Connection c = connection();
@@ -194,6 +230,11 @@ public class DatabaseJobPostgre extends DatabaseConnectionPostgre
         return false;
     }
 
+    /**
+     * method yang digunakan untuk mendapatkan job berdasarkan id job
+     * @return job yang akan dihapus
+     * @param jobId id job
+     */
     public static Job getJobById(int jobId)
     {
         Connection c = connection();

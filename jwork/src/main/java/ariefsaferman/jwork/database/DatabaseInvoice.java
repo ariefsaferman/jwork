@@ -6,6 +6,13 @@ import ariefsaferman.jwork.exception.OngoingInvoiceAlreadyExistsException;
 
 import java.util.ArrayList;
 
+/**
+ *
+ *
+ * @author Arief Saferman
+ * @version  18 Juni 2021
+ *
+ */
 public class DatabaseInvoice 
 {
     private static ArrayList<Invoice> INVOICE_DATABASE = new ArrayList<Invoice>();

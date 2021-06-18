@@ -8,10 +8,24 @@ import java.util.Calendar;
 import java.util.GregorianCalendar;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
+/**
+ *
+ *
+ * @author Arief Saferman
+ * @version  18 Juni 2021
+ *
+ */
 
 import static ariefsaferman.jwork.database_connection.DatabaseConnectionPostgre.connection;
 public class DatabaseJobseekerPostgre
 {
+    /**
+     * method yang digunakan untuk menambahkan jobseeker
+     * @return Jobseeker
+     * @param name string nama jobseeker
+     * @param email strign email jobseeker
+     * @param password string password jobseeker
+     */
     public static Jobseeker insertJobSeeker(String name, String email, String password)
     {
         // Cek Email
@@ -52,6 +66,10 @@ public class DatabaseJobseekerPostgre
         return jobseeker;
     }
 
+    /**
+     * method yang digunakan untuk mendapatkan id terakhir jobseeker
+     * @return int id jobseeker terakhir
+     */
     public static int getLastJobseekerId()
     {
         Connection c = connection();
@@ -73,6 +91,10 @@ public class DatabaseJobseekerPostgre
         return id;
     }
 
+    /**
+     * method yang digunakan untuk mendapatkan database jobseeker
+     * @return arraylist jobnseeker
+     */
     public static ArrayList<Jobseeker> getDatabaseJobseeker()
     {
         Connection c = connection();
@@ -104,6 +126,11 @@ public class DatabaseJobseekerPostgre
         return JOBSEEKER_DATABASE;
     }
 
+    /**
+     * method yang digunakan untuk menghapus jobseeker dari databse jobseeker
+     * @return Boolean
+     * @param id id jobseeker yang ingin dihapus
+     */
     public static Boolean removeJobseeker(int id)
     {
         Connection c = connection();
@@ -122,6 +149,12 @@ public class DatabaseJobseekerPostgre
         return false;
     }
 
+    /**
+     * method yang digunakan untuk mendapatkan jobseeker
+     * @return Jobseeker
+     * @param email2 email jobseeker
+     * @param password2 password jobseeker
+     */
     public static Jobseeker getJobseeker(String email2, String password2)
     {
         Connection c = connection();
@@ -155,6 +188,11 @@ public class DatabaseJobseekerPostgre
         return jobseeker;
     }
 
+    /**
+     * method yang digunakan untuk mendapatkan jobseeker berdasarkan id nya
+     * @return Jobseeker
+     * @param id_jobseeker id jobseeker
+     */
     public static Jobseeker getJobseeker(int id_jobseeker)
     {
         Connection c = connection();

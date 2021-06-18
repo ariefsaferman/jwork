@@ -10,8 +10,20 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 
+/**
+ *
+ *
+ * @author Arief Saferman
+ * @version  18 Juni 2021
+ *
+ */
+
 public class DatabaseRecruiterPostgre extends DatabaseConnectionPostgre
 {
+    /**
+     * method yang digunakan untuk mendapatkan database recruiter
+     * @return arraylist recruiter
+     */
     public static ArrayList<Recruiter> getRecruiterDatabase()
     {
         Connection c = connection();
@@ -53,6 +65,11 @@ public class DatabaseRecruiterPostgre extends DatabaseConnectionPostgre
         return RECRUITER_DATABASE;
     }
 
+    /**
+     * method yang digunakan untuk menambahkan recruiter database
+     * @return Recruiter
+     * @param recruiter objek recruiter
+     */
     public static Recruiter addRecruiter(Recruiter recruiter)
     {
         Connection c = connection();
@@ -89,6 +106,11 @@ public class DatabaseRecruiterPostgre extends DatabaseConnectionPostgre
         return recruiter;
     }
 
+    /**
+     * method yang digunakan untuk mendapatkan recruiter berdasarkan id
+     * @return Recruiter
+     * @param id_recruiter id recruiter yang ingin di dapatkan
+     */
     public static Recruiter getRecruiterById(int id_recruiter)
     {
         Connection c = connection();

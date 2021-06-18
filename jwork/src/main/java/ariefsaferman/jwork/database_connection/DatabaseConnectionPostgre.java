@@ -3,10 +3,20 @@ package ariefsaferman.jwork.database_connection;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.Statement;
-
+/**
+ *
+ *
+ * @author Arief Saferman
+ * @version  18 Juni 2021
+ *
+ */
 public class DatabaseConnectionPostgre
 {
 
+    /**
+     * method yang digunakan untuk membangun koneksi ke database postgreSQL
+     * @return Connection koneksi ke database
+     */
     public static Connection connection()
     {
         Connection c = null;

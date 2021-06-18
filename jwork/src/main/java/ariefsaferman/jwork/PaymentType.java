@@ -9,8 +9,8 @@ package ariefsaferman.jwork;
 
 public enum PaymentType 
 {
-    BankPayment("Bank Payment"), 
-    EwalletPayment("E-Wallet Payment"); 
+    BankPayment("BankPayment"),
+    EwalletPayment("EwalletPayment");
 
     private final String paymentString;
 

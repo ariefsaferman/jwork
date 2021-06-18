@@ -88,12 +88,13 @@ public class DatabaseJobPostgre extends DatabaseConnectionPostgre
 
 
         try {
-            String sql = "INSERT INTO job(fee, name, category, recruiter) VALUES (?,?,?::job_category,?);";
+            String sql = "INSERT INTO job(id, fee, name, category, recruiter) VALUES (?,?,?,?::job_category,?);";
             stmt = c.prepareStatement(sql);
-            stmt.setInt(1,fee);
-            stmt.setString(2, name);
-            stmt.setString(3, category.name());
-            stmt.setInt(4, recruiter.getId());
+            stmt.setInt(1, job.getId());
+            stmt.setInt(2,fee);
+            stmt.setString(3, name);
+            stmt.setString(4, category.name());
+            stmt.setInt(5, recruiter.getId());
             int update = stmt.executeUpdate();
             ResultSet resultSet = stmt.getGeneratedKeys();
             int id = 1;
@@ -106,8 +107,7 @@ public class DatabaseJobPostgre extends DatabaseConnectionPostgre
             return job;
 
         } catch (SQLException throwables) {
-            System.out.println("addjob");
-            throwables.printStackTrace();
+            System.err.println(throwables.getMessage());
         }
         return job;
     }
@@ -219,9 +219,9 @@ public class DatabaseJobPostgre extends DatabaseConnectionPostgre
                 recruiter = DatabaseRecruiterPostgre.getRecruiterById(recruiterId);
 
                 job1 = new Job(id, fee, name, category, recruiter);
-                stmt.close();
-                c.close();
             }
+            stmt.close();
+            c.close();
 
         } catch (SQLException throwables) {
             throwables.printStackTrace();

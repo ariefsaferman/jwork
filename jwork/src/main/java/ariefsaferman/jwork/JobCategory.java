@@ -9,14 +9,14 @@ package ariefsaferman.jwork;
 
 public enum JobCategory 
 {
-    WebDeveloper("Web Developer"), 
-    FrontEnd("Front End"), 
-    BackEnd("Back End"), 
+    WebDeveloper("WebDeveloper"),
+    FrontEnd("FrontEnd"),
+    BackEnd("BackEnd"),
     UI("UI"), 
     UX("UX"), 
     Devops("Devops"),
-    DataScientist("Data Scientist"), 
-    DataAnalyst("Data Analyst"); 
+    DataScientist("DataScientist"),
+    DataAnalyst("DataAnalyst");
 
     private final String jobstring; 
 

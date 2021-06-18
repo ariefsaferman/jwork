@@ -6,12 +6,28 @@ import java.sql.*;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.GregorianCalendar;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 import static ariefsaferman.jwork.database_connection.DatabaseConnectionPostgre.connection;
 public class DatabaseJobseekerPostgre
 {
     public static Jobseeker insertJobSeeker(String name, String email, String password)
     {
+        // Cek Email
+        Pattern p = Pattern.compile("^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])[a-zA-Z[0-9]]{6,}$");
+        Matcher matcher = p.matcher(password);
+        if(!matcher.matches()){
+            return null;
+        }
+
+        // Cek password
+        p = Pattern.compile("(?!.*\\.{2,})(?!\\.)[0-9A-z.&*_~]+@(?!-)[0-9A-z&*_~.-]+");
+        matcher = p.matcher(email);
+        if(!matcher.matches()){
+            return null;
+        }
+
         Connection c = connection();
         PreparedStatement stmt;
         Jobseeker jobseeker = null;

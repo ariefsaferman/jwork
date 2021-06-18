@@ -160,4 +160,8 @@ public abstract class Invoice
     // public abstract void printData();
 
     public abstract String toString();
+
+    public void setTotalFee(int totalFee) {
+        this.totalFee = totalFee;
+    }
 }

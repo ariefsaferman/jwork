@@ -106,4 +106,36 @@ public class DatabaseBonusPostgre extends DatabaseConnectionPostgre
         return bonus;
     }
 
+    public static Bonus getBonusById(int bonusId)
+    {
+        Connection c = connection();
+        PreparedStatement stmt;
+        int id = 0;
+        String codeReferral = null;
+        int extraFee = 0;
+        int minTotalFee = 0;
+        boolean active = false;
+        Bonus bonus = null;
+
+        try {
+            String sql = "SELECT * FROM bonus WHERE id = ?;";
+            stmt = c.prepareStatement(sql);
+            stmt.setInt(1, bonusId);
+            ResultSet resultSet = stmt.executeQuery();
+            while (resultSet.next()) {
+                id = resultSet.getInt("id");
+                codeReferral = resultSet.getString("referralcode");
+                extraFee = resultSet.getInt("extrafee");
+                minTotalFee = resultSet.getInt("mintotalfee");
+                active = resultSet.getBoolean("active");
+            }
+            stmt.close();
+            c.close();
+            bonus = new Bonus(id, codeReferral, extraFee, minTotalFee, active);
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return bonus;
+    }
+
 }

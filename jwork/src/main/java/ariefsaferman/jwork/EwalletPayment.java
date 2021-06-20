@@ -49,7 +49,8 @@ public class EwalletPayment extends Invoice {
     }
 
      /**
-     * method untuk mengubah nilai bonus  
+     * method untuk mengubah nilai bonus
+      * @param bonus objek bonus
      */
     public void setBonus(Bonus bonus)
     {

@@ -40,7 +40,8 @@ public class DatabaseBonus {
         return x;
     }
     /** 
-     * method yang digunakan untuk menambah bonus 
+     * method yang digunakan untuk menambah bonus
+     * @param bonus menerima objek bonus
      * @return Bonus untuk mengembalikan ada bonus atau tidak
      */
     public static Boolean addBonus(Bonus bonus) throws ReferralCodeAlreadyExistsException

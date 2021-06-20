@@ -102,8 +102,7 @@ public class Recruiter
         this.phoneNumber = phoneNumber;
     }
     
-    /** 
-     * @param location menyimpak lokasi yang ingin diakses 
+    /**
      * @return Location mengembalikan nilai lokasi dari setter 
      */
     public Location getLocation()

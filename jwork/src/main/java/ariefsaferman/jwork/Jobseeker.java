@@ -49,19 +49,17 @@ public class Jobseeker
         this.name = name; 
     }
     
-    /** 
-     * @return int
+    /**
      * 
      *  ini adalah metode getId untuk setiapp object mendapatkan ID masing-masing
-     * @return dia akan mengembalikan dari ID yang diberikan oleh perusahaan 
+     * @return int id dia akan mengembalikan dari ID yang diberikan oleh perusahaan
          */
     public int getId()
     {
         return id;
     }
     
-    /** 
-     * @return String
+    /**
      * /**
      * ini adalah metode getName untuk setiapp object mendapatkan ID masing-masing
      * @return dia akan mengembalikan dari ID yang diberikan oleh perusahaan 
@@ -71,8 +69,7 @@ public class Jobseeker
         return name;
     }
         
-    /** 
-     * @return String
+    /**
     * ini adalah metode getEmail untuk setiapp object mendapatkan ID masing-masing
     * @return dia akan mengembalikan dari email yang didaftarkan 
     */
@@ -82,8 +79,7 @@ public class Jobseeker
     }
     
     
-    /** 
-     * @return String
+    /**
      * ini adalah metode joinDate untuk setiapp object mendapatkan ID masing-masing 
      * @return dia akan mengembalikan dari berupaa string dengan nilai waktu bergabung 
      */
@@ -97,7 +93,7 @@ public class Jobseeker
      * 
      *  
      * ini adalah metode getPassword untuk setiapp object mendapatkan password masing-masing  
-     * @return tidak mengembalikan nilai  
+     * @return String tidak mengembalikan nilai
      */
     public String getPassword()
     {
@@ -110,7 +106,6 @@ public class Jobseeker
      *  
      * ini adalah metode setID untuk setiapp object mendapatkan ID masing-masing 
      * @param id digunakan untuk memberikan nilai pada parameter ID
-     * @return tidak mengembalikan nilai  
      */
     public void setID(int id)
     {
@@ -122,8 +117,7 @@ public class Jobseeker
      * 
      *  
      * ini adalah metode setPassword  
-     * @param password digunakan untuk memberikan nilai pada parameter password  
-     * @return mengembalikan nilai password yang diubah   
+     * @param password digunakan untuk memberikan nilai pada parameter password
      */
     public void setPassword(String password)
     {

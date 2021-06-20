@@ -37,8 +37,8 @@ public class BankPayment extends Invoice{
     }
 
     /** 
-     * method yang digunakan untuk mengubah admin fee
-     * @return int mengebalikan nilai adminfee  
+     *method yang digunakan untuk mengubah admin fee
+     * @param adminFee adminFee
      */
     public void setAdminFee(int adminFee)
     {
@@ -46,8 +46,7 @@ public class BankPayment extends Invoice{
     }
 
     /** 
-     * method yang digunakan untuk mengubah total fee 
-     * @return int mengebalikan nilai totalFee 
+     * method yang digunakan untuk mengubah total fee
      */
     public void setTotalFee()
     {
